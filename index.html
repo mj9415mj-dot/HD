@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="현대면세점 이벤트 페이지 - 퍼블리셔 과제">
+  <title>현대면세점 퍼블리셔 과제</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="topbar">
+        <div class="container topbar__inner">
+          <div class="topbar__left">
+            <button class="topbar__lang" type="button" aria-label="언어 선택">
+              <img src="public/svg/icon_gnb_language.svg" alt="" aria-hidden="true" width="16" height="16" />
+              <span class="topbar__lang-code">KR</span>
+            </button>
+            <div class="topbar__divider" aria-hidden="true"></div>
+            <div class="topbar__rate">$1 = 1,129원</div>
+          </div>
+          <ul class="top-util">
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">지점안내</a></li>
+            <li><a href="#">주문가능시간</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hd-header">
+        <div class="container hd-header__inner">
+          <div class="hd-header__left">
+            <button class="hd-header__menu" type="button" aria-label="메뉴 열기">
+              <img src="public/images/icons/btn_drawer.png" alt="메뉴" width="36" height="36" />
+            </button>
+            <h1 class="hd-header__logo">
+              <a href="#">
+                <img src="public/images/logo/HD_logo.png" alt="HYUNDAI DUTY FREE 로고" />
+              </a>
+            </h1>
+          </div>
+
+          <div class="hd-header__search">
+          
+            <label class="search" for="site-search">
+              <input id="site-search" class="search__input" type="search" placeholder="봄맞이 🌸 신상품 20% 할인 행사" aria-label="사이트 검색" />
+              <img class="search__icon" src="public/svg/icon_gnb_search.svg" alt="검색" aria-hidden="true" />
+            </label>
+          </div>
+
+          <div class="hd-header__right">
+         <button class="hd-header__cart" type="button" aria-label="장바구니"></button>
+         <button class="hd-header__profile" type="button" aria-label="내정보"></button>
+
+       <button class="hd-header__curation" type="button" aria-label="큐레이션">
+  <img src="public/images/icons/btn_curation.png" alt="큐레이션" />
+</button>
+
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 히어로 영역 -->
+      <section class="hero"> 
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <p class="hero__date">2024.07.29 · 체험&스페셜케어</p>
+            <h2 class="hero__title">
+              라네즈 외 7개 브랜드<br />
+              햇살 가림 상품 기획전
+            </h2>
+            <p class="hero__subtitle">전 구매 고객 대상 7개 브랜드 상품 할인!</p>
+          </div>
+
+          <div class="hero__image">
+            <img src="public/images/hero/hero_main.png" alt="라네즈 선케어 제품 이미지" />
+          </div>
+
+          <!-- 상단 탭 -->
+          <nav class="hero-tabs" aria-label="기획전 탭">
+            <button class="hero-tabs__btn is-active" type="button" data-target="panel-event">행사</button>
+            <button class="hero-tabs__btn" type="button" data-target="panel-recommend">추천상품</button>
+            <button class="hero-tabs__btn" type="button" data-target="panel-all">전체상품</button>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ===== 패널 1 : 행사 ===== -->
+      <section id="panel-event" class="panel panel--active">
+        <div class="container">
+          <!-- Event 1 : 브랜드 배너 -->
+          <section class="event-section" aria-labelledby="event1-title">
+            <header class="section-head">
+              <p class="section-head__eyebrow">Event 1</p>
+              <h3 id="event1-title" class="section-head__title">라네즈 외 7개 브랜드 40% 할인</h3>
+              <p class="section-head__desc">
+                7개 브랜드의 SUN 제품을 40% 할인가에 만나보세요!
+              </p>
+            </header>
+
+            <div class="brand-carousel">
+              <button
+                class="brand-carousel__control brand-carousel__control--prev"
+                type="button"
+                aria-label="이전 브랜드 보기"
+              ></button>
+
+              <ul class="brand-carousel__list">
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_laneige.png" alt="라네즈" />
+                  <span class="brand-card__name">라네즈</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_orthomol.png" alt="오쏘몰" />
+                  <span class="brand-card__name">오쏘몰</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_centorum.png" alt="센트룸" />
+                  <span class="brand-card__name">센트룸</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_onnuristore.png" alt="온누리스토어" />
+                  <span class="brand-card__name">온누리스토어</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_hermes.jpg" alt="헤메레스" />
+                  <span class="brand-card__name">헤메레스</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_gnc.png" alt="GNC" />
+                  <span class="brand-card__name">GNC</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_ckd.png" alt="CKD" />
+                  <span class="brand-card__name">CKD</span>
+                </li>
+                <li class="brand-card">
+                  <img src="public/images/brands/brand_solgar.png" alt="솔가" />
+                  <span class="brand-card__name">솔가</span>
+                </li>
+              </ul>
+
+              <button
+                class="brand-carousel__control brand-carousel__control--next"
+                type="button"
+                aria-label="다음 브랜드 보기"
+              ></button>
+            </div>
+          </section>
+
+          <!-- Event 2 : 상품 그리드 -->
+          <section class="event-section" aria-labelledby="event2-title">
+            <header class="section-head">
+              <p class="section-head__eyebrow">Event 2</p>
+              <h3 id="event2-title" class="section-head__title">
+                햇살 가리는 SUN 제품 70% 할인
+              </h3>
+              <p class="section-head__desc">
+                7개 브랜드의 SUN 제품을 70% 할인가에 만나보세요!
+              </p>
+            </header>
+
+            <ul class="product-grid">
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_cream.png"
+                      alt="라네즈 네오 에센셜 블러링 피니시 파우더"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">
+                      라네즈 네오 에센셜 블러링 피니시 파우더
+                    </p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_neo.png"
+                      alt="라네즈 네오 파운데이션 17ON"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">라네즈 네오 파운데이션 17ON</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_waterbank.png"
+                      alt="라네즈 워터뱅크 블루 히알루로닉 크림"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">워터뱅크 블루 히알루로닉 크림</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_skinveil.png"
+                      alt="라네즈 스킨베일베이스 EX"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">스킨베일베이스 EX</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_retinol.png"
+                      alt="라네즈 레티놀 잡티 플러스"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">레티놀 잡티 플러스</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_sleeping.png"
+                      alt="라네즈 워터 슬리핑 마스크"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">워터 슬리핑 마스크</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Event 3 : 세트상품 -->
+          <section class="event-section" aria-labelledby="event3-title">
+            <header class="section-head">
+              <p class="section-head__eyebrow">Event 3</p>
+              <h3 id="event3-title" class="section-head__title">
+                해를 가려라, SUN 제품 세트상품 10% 할인
+              </h3>
+              <p class="section-head__desc">
+                홍마이 마사지기 V3와 선크림 세트 구성으로 부담 없이 준비하세요.
+              </p>
+            </header>
+
+            <article class="product-feature">
+              <div class="product-feature__thumb">
+                <img src="public/images/products/event3/e3_sun.png" alt="선크림 세트 상품" />
+              </div>
+              <div class="product-feature__info">
+                <p class="product-feature__label">세트 구성</p>
+                <h4 class="product-feature__name">라네즈 래디언C 선크림 세트</h4>
+
+                <dl class="product-feature__price">
+                  <div>
+                    <dt>정상가</dt>
+                    <dd class="product-feature__price-original">69.6</dd>
+                  </div>
+                  <div>
+                    <dt>행사가</dt>
+                    <dd>
+                      <span class="product-feature__discount">10%</span>
+                      <span class="product-feature__price-final">62.64</span>
+                    </dd>
+                  </div>
+                </dl>
+
+                <button type="button" class="btn-primary">
+                  <span>장바구니 담기</span>
+                </button>
+              </div>
+            </article>
+          </section>
+
+          <!-- 브랜드관 -->
+          <section class="brand-section" aria-labelledby="brand-section-title">
+            <header class="section-head section-head--center">
+              <h3 id="brand-section-title" class="section-head__title">브랜드관</h3>
+            </header>
+
+            <ul class="brand-grid">
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_laneige.png" alt="라네즈" />
+                <span>라네즈</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_orthomol.png" alt="오쏘몰" />
+                <span>오쏘몰</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_centorum.png" alt="센트룸" />
+                <span>센트룸</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_onnuristore.png" alt="온누리스토어" />
+                <span>온누리스토어</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_hermes.jpg" alt="헤메레스" />
+                <span>헤메레스</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_gnc.png" alt="GNC" />
+                <span>GNC</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_ckd.png" alt="CKD" />
+                <span>CKD</span>
+              </li>
+              <li class="brand-grid__item">
+                <img src="public/images/brands/brand_solgar.png" alt="솔가" />
+                <span>솔가</span>
+              </li>
+            </ul>
+          </section>
+
+          <!-- 유의사항 -->
+          <section class="notice-section" aria-labelledby="notice-title">
+            <div class="notice-section__inner">
+              <h3 id="notice-title" class="notice-section__title">유의사항</h3>
+              <ul class="notice-section__list">
+                <li>행사 기간 및 할인율은 브랜드 사정에 따라 조기 변경될 수 있습니다.</li>
+                <li>준비된 수량 소진 시 별도 안내 없이 종료될 수 있습니다.</li>
+                <li>일부 상품은 브랜드 별로 혜택이 상이할 수 있습니다.</li>
+                <li>자세한 내용은 각 상품 상세 페이지를 참고해 주세요.</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- CTA -->
+          <div class="cta">
+            <button type="button" class="cta__button">
+              <img src="public/images/icons/btn_curation.png" alt="" aria-hidden="true" />
+              <span>더 많은 기획전 행사가 궁금하다면</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 패널 2 : 추천상품 ===== -->
+      <section id="panel-recommend" class="panel">
+        <div class="container">
+          <section class="event-section" aria-labelledby="best-title">
+            <header class="section-head">
+              <h3 id="best-title" class="section-head__title">추천 SUN 베스트 상품</h3>
+              <p class="section-head__desc">
+                기획전 내에서 특히 반응이 좋은 인기 상품만 모았습니다.
+              </p>
+            </header>
+
+            <ul class="product-grid product-grid--three">
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_cream.png"
+                      alt="라네즈 네오 에센셜 블러링 피니시 파우더"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">
+                      라네즈 네오 에센셜 블러링 피니시 파우더
+                    </p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_retinol.png"
+                      alt="라네즈 레티놀 잡티 플러스"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">레티놀 잡티 플러스</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="product-card">
+                <a href="#">
+                  <div class="product-card__thumb">
+                    <img
+                      src="public/images/products/event2/e2_sleeping.png"
+                      alt="라네즈 워터 슬리핑 마스크"
+                    />
+                  </div>
+                  <div class="product-card__info">
+                    <p class="product-card__name">워터 슬리핑 마스크</p>
+                    <p class="product-card__discount"><span>70%</span><strong>11.7</strong></p>
+                    <p class="product-card__price-original">39</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <!-- ===== 패널 3 : 전체상품 ===== -->
+      <section id="panel-all" class="panel">
+        <div class="container">
+          <section class="event-section" aria-labelledby="all-title">
+            <header class="section-head">
+              <h3 id="all-title" class="section-head__title">전체 상품 한눈에 보기</h3>
+              <p class="section-head__desc">
+                실제 서비스에서는 검색 · 필터 기능이 들어가지만, 과제에서는 레이아웃 구현에 초점을 두었습니다.
+              </p>
+            </header>
+
+            <div class="all-list">
+              <ul>
+                <li>라네즈 SUN &amp; 베이스 제품 6종</li>
+                <li>선크림 &amp; 마사지기 세트 상품 2종</li>
+                <li>참여 브랜드 건강기능식품 및 기타 상품</li>
+              </ul>
+              <p class="all-list__help">
+                ※ 과제 설명서에는 HTML 구조/네이밍, JS 인터랙션, 반응형 전략을 정리해서 같이 제출하면 좋아.
+              </p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <p>
+          ⓒ HYUNDAI DUTY FREE. 본 페이지는 포트폴리오/과제용으로 제작한 클론 코딩 예제입니다.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./src/main.js"></script>
+</body>
+</html>
