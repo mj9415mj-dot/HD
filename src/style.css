@@ -7,7 +7,7 @@
   /* test로 회색배경 임시처리 */
   --color-page-bg: #f5f7fa; 
   /* --color-page-bg: #ffffff;  */
-  --color-hero-bg: #c6d8f4;
+  --color-hero-bg: #c9e1fd;
   --color-notice-bg: #f9fafb;
   --color-accent: #ea2829;
 
@@ -69,9 +69,8 @@ img {
 }
 
 .page {
+  width: 100%;
   min-height: 100vh;
-  max-width: 1356px;   /* 데스크톱 최대 폭 */
-  margin: 0 auto;      /* 가로 가운데 정렬 */
   background-color: #ffffff;  /*임시 배경색 */
 }
 
@@ -85,7 +84,6 @@ img {
 
 
 .site-header{
-    max-width: 1356px;
     padding-top: 12px;
 }
 
@@ -490,16 +488,100 @@ position: relative;
 
 /* hero */
 
-.hero {
+.hero-banner {
   background-color: var(--color-hero-bg);
-  padding: 56px 0 64px;
+  padding-top: 24px; /* 상단 여백 */
+  padding-bottom: 350px; /* 하단 여백을 늘려 이미지와 겹칠 공간 확보 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* hero-top과 hero__text 사이 간격 */
 }
 
-.hero__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-  gap: 40px;
+.hero {
+  width: 100%;
+}
+
+.hero-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 16px; /* 좌우 여백 추가 */
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* breadcrumb와 social 아이콘을 양끝으로 */
   align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -280px; /* 배너 위로 더 많이 올라오도록 조정 */
+  position: relative;
+  z-index: 1;
+}
+
+.hero-top {
+  width: 100%;
+}
+
+.hero-breadcrumb {
+  font-size: 12px;
+  color: var(--color-secondary);
+}
+
+.hero-breadcrumb ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.hero-breadcrumb li + li::before {
+  content: '>';
+  margin: 0 8px;
+  color: var(--color-muted);
+}
+
+.hero-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+.hero-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.hero-social {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-image: url('../images/icons/ico_common.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.social-btn--heart {
+  background-position: -260px -920px;
+}
+
+.social-btn--facebook {
+  background-position: -340px -920px;
+}
+
+.social-btn--blog {
+  background-position: -460px -920px;
+}
+
+.hero__text {
+  text-align: center;
+  width: 100%; /* hero-container 내에서 중앙 정렬을 위해 */
 }
 
 .hero__date {
@@ -509,63 +591,71 @@ position: relative;
 }
 
 .hero__title {
-  font-size: 34px;
-  line-height: 1.4;
-  letter-spacing: -0.04em;
+  font-size: 40px;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
   margin: 0 0 12px;
+  font-weight: 800;
 }
 
 .hero__subtitle {
-  font-size: 16px;
+  font-size: 15px;
   color: var(--color-secondary);
   margin: 0;
 }
 
 .hero__image {
-  max-width: 520px;
-  justify-self: center;
+  width: 804px;
+  height: 512px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
   background-color: #ffffff;
+  margin-bottom: 40px;
 }
 
 .hero__image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* hero tabs */
 
 .hero-tabs {
-  grid-column: 1 / -1;
-  margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 4px;
+  gap: 12px; /* 탭 간격 조정 */
   border-bottom: 1px solid var(--color-line);
-  background-color: #ffffff;
-  border-radius: 999px;
-  padding: 4px;
-  width: fit-content;
+  width: 100%;
+  padding-bottom: 12px;
 }
 
 .hero-tabs__btn {
   min-width: 96px;
-  border-radius: 999px;
   border: none;
   background: transparent;
   font-size: 14px;
   line-height: 1.5;
-  padding: 8px 18px;
+  padding: 8px 12px;
   color: var(--color-secondary);
   cursor: pointer;
+  position: relative;
 }
 
 .hero-tabs__btn.is-active {
-  background-color: #1b1e23;
-  color: #ffffff;
+  color: var(--color-primary);
   font-weight: 700;
+}
+
+.hero-tabs__btn.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-primary);
 }
 
 /* panels & sections */
@@ -1022,32 +1112,44 @@ position: relative;
 /* responsive */
 
 @media (max-width: 960px) {
-  .hero {
-    padding: 32px 0 40px;
+  .hero-banner {
+    height: auto;
+    padding: 24px 0;
   }
 
-  .hero__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__image {
-    max-width: 360px;
-  }
-
-  .hero-tabs {
+  .hero-content {
     margin-top: 24px;
   }
 
-  .product-feature {
-    grid-template-columns: 1fr;
+  .hero-container {
+    max-width: 720px;
   }
 
-  .brand-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .hero-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
   }
 
-  .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .hero__image {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 804 / 512;
+    margin-bottom: 24px;
+  }
+
+  .hero-tabs {
+    gap: 8px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    line-height: 1.35;
+  }
+  .hero__subtitle {
+    font-size: 14px;
   }
 }
 

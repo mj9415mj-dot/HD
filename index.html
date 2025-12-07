@@ -9,6 +9,7 @@
 </head>
 <body>
   <div class="page">
+    <!--단상단 -->
     <header class="site-header">
       <div class="topbar">
         <div class="container topbar__inner">
@@ -58,8 +59,6 @@
        <button class="hd-header__curation" type="button" aria-label="큐레이션">
   <img src="public/images/icons/btn_curation.png" alt="큐레이션" />
 </button>
-
-
           </div>
         </div>
       </div>
@@ -67,30 +66,52 @@
 
     <main>
       <!-- 히어로 영역 -->
-      <section class="hero"> 
-        <div class="container hero__inner">
-          <div class="hero__text">
-            <p class="hero__date">2024.07.29 · 체험&스페셜케어</p>
-            <h2 class="hero__title">
-              라네즈 외 7개 브랜드<br />
-              햇살 가림 상품 기획전
-            </h2>
-            <p class="hero__subtitle">전 구매 고객 대상 7개 브랜드 상품 할인!</p>
+      <div class="hero-banner">
+        <div class="hero-top">
+          <div class="hero-container">
+            <nav class="hero-breadcrumb" aria-label="현재 위치">
+              <ol>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">기획전</a></li>
+                <li><a href="#">사은행사</a></li>
+                <li><a href="#">라네즈 외 7개 브랜드 할인 기획전</a></li>
+              </ol>
+            </nav>
+            <div class="hero-social">
+              <button type="button" class="social-btn social-btn--heart" aria-label="좋아요"></button>
+              <button type="button" class="social-btn social-btn--facebook" aria-label="페이스북에 공유"></button>
+              <button type="button" class="social-btn social-btn--blog" aria-label="블로그에 공유"></button>
+            </div>
           </div>
-
-          <div class="hero__image">
-            <img src="public/images/hero/hero_main.png" alt="라네즈 선케어 제품 이미지" />
-          </div>
-
-          <!-- 상단 탭 -->
-          <nav class="hero-tabs" aria-label="기획전 탭">
-            <button class="hero-tabs__btn is-active" type="button" data-target="panel-event">행사</button>
-            <button class="hero-tabs__btn" type="button" data-target="panel-recommend">추천상품</button>
-            <button class="hero-tabs__btn" type="button" data-target="panel-all">전체상품</button>
-          </nav>
         </div>
-      </section>
+        <section class="hero">
+          <div class="hero-container">
+            <!-- hero__title: 이벤트명은 명사형으로 간결하게 표기 최대 3줄까지 입력 가능(공백 제외 20자 (포함 25자)) -->
+            <div class="hero__text">
+              <p class="hero__date">2024.07.29 · 재고소진시까지</p>
+              <h2 class="hero__title">
+                라네즈 외 7개 브랜드<br />
+                햇살 가림 상품 기획전
+              </h2>
+              <!-- hero__subtitle: 이벤트명을 보조하는 필수 문구 표기 최대 2줄까지 입력 가능(공백 제외 54자 (포함 73자)) -->
+              <p class="hero__subtitle">전 구매 고객 대상 7개 브랜드 상품 할인!</p>
+            </div>
+          </div>
+        </section>
+      </div>
 
+      <div class="hero-content">
+        <div class="hero__image">
+          <img src="public/images/hero/hero_main.png" alt="라네즈 선케어 제품 이미지" />
+        </div>
+
+        <!-- 상단 탭 -->
+        <nav class="hero-tabs" aria-label="기획전 탭">
+          <button class="hero-tabs__btn is-active" type="button" data-target="panel-event">행사</button>
+          <button class="hero-tabs__btn" type="button" data-target="panel-recommend">추천상품</button>
+          <button class="hero-tabs__btn" type="button" data-target="panel-all">전체상품</button>
+        </nav>
+      </div>
       <!-- ===== 패널 1 : 행사 ===== -->
       <section id="panel-event" class="panel panel--active">
         <div class="container">
@@ -129,7 +150,7 @@
                   <span class="brand-card__name">온누리스토어</span>
                 </li>
                 <li class="brand-card">
-                  <img src="public/images/brands/brand_hermes.jpg" alt="헤메레스" />
+                  <img src="public/images/brands/brand_hermes.png" alt="헤메레스" />
                   <span class="brand-card__name">헤메레스</span>
                 </li>
                 <li class="brand-card">
