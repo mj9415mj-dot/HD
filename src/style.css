@@ -756,7 +756,7 @@ img {
   display: flex;
   align-items: center;
   margin-top: 28px;
-  padding: 0 72px 40px; /* 좌우 화살표 공간 + 아래 라인 공간 */
+  padding: 0 72px 48px; /* 좌우 화살표 공간 + 아래 인디케이터 여백 */
 }
 
 /* 브랜드 카드 리스트 */
@@ -777,16 +777,28 @@ img {
 }
 
 /* 하단 중앙 라인 */
-.brand-carousel::after {
+/* 중앙 인디케이터 바: 연한 전체 라인 + 가운데 진한 라인 */
+.brand-carousel::before {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
-  width: 120px;
-  height: 2px;
+  bottom: 14px;
+  width: 200px;
+  height: 1px;
+  background-color: var(--color-line); /* 연한 회색 1px 라인 */
+}
+
+.brand-carousel::after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  transform: translateX(-50%);
+  bottom: 13px;
+  width: 100px;
+  height: 3px;
   border-radius: 999px;
-  background-color: #222; /* 레퍼런스처럼 진한 회색 */
+  background-color: #1b1e23; /* 진한 색의 두꺼운 라인 */
 }
 
 /* 스크롤바 숨김 (웹킷 계열) */
@@ -837,7 +849,8 @@ img {
 
 .brand-card__logo {
   position: absolute;
-  width: 78%;
+  width: 100%;
+  height: 34px;
   height: auto;
   object-fit: contain;
 }
@@ -852,7 +865,7 @@ img {
   justify-content: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.3);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   letter-spacing: 0.12em;
   padding: 0;
@@ -1218,9 +1231,4 @@ img {
 .cta__button:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-}
-
-.brand-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
 }
