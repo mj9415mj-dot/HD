@@ -347,6 +347,130 @@
                     </a>
                     <span class="brand-card__name">종근당건강</span>
                   </li>
+
+                  <!-- Duplicated items for scrolling -->
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_laneige.png"
+                            alt="라네즈"
+                          />
+                          <span class="brand-card__shop-label">
+                            BRAND SHOP</span
+                          >
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_laneige.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">라네즈</span>
+                  </li>
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_orthomol.png"
+                            alt="오쏘몰"
+                          />
+                          <span class="brand-card__shop-label">BRAND SHOP</span>
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_orthomol.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">오쏘몰</span>
+                  </li>
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_centorum.png"
+                            alt="센트룸"
+                          />
+                          <span class="brand-card__shop-label">BRAND SHOP</span>
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_centorum.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">센트룸</span>
+                  </li>
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_onnuristore.png"
+                            alt="온누리스토어"
+                          />
+                          <span class="brand-card__shop-label">BRAND SHOP</span>
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_onnuristore.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">온누리스토어</span>
+                  </li>
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_hermes.png"
+                            alt="헤메레스"
+                          />
+                          <span class="brand-card__shop-label">BRAND SHOP</span>
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_hermes.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">헤메레스</span>
+                  </li>
+                  <li class="brand-card">
+                    <a href="#">
+                      <div class="brand-card__thumb">
+                        <div class="brand-card__overlay">
+                          <img
+                            class="brand-card__logo"
+                            src="public/images/brands/brand_logo/logo_ckd.png"
+                            alt="종근당건강"
+                          />
+                          <span class="brand-card__shop-label">BRAND SHOP</span>
+                        </div>
+                        <img
+                          class="brand-card__bg"
+                          src="public/images/brands/brand_ckd.png"
+                          alt=""
+                        />
+                      </div>
+                    </a>
+                    <span class="brand-card__name">종근당건강</span>
+                  </li>
                 </ul>
 
                 <button
@@ -356,6 +480,10 @@
                 >
                   <img src="public/svg/icon_arrow.svg" alt="다음" />
                 </button>
+                
+                <div class="scroll-tracker" aria-hidden="true">
+                  <div class="scroll-tracker__bar"></div>
+                </div>
               </div>
             </section>
 
@@ -371,121 +499,348 @@
                 </p>
               </header>
 
-              <ul class="product-grid">
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_neo.png"
-                        alt="라네즈 네오 파운데이션 17ON"
-                      />
+              <div class="product-slider-wrapper">
+                <ul class="product-grid-page">
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_neo.png"
+                          alt="라네즈 네오 파운데이션 17ON"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">
-                        라네즈 네오 파운데이션 17ON
-                      </p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 네오 에센셜 블러링 피니시 파우더 (싱글)
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_cream.png"
-                        alt="라네즈 네오 에센셜 블러링 피니시 파우더"
-                      />
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_cream.png"
+                          alt="라네즈 크림스킨 170ML"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">
-                        라네즈 네오 에센셜 블러링 피니시 파우더
-                      </p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">라네즈 크림스킨 170ML</p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_waterbank.png"
-                        alt="라네즈 워터뱅크 블루 히알루로닉 크림"
-                      />
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_waterbank.png"
+                          alt="라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">
-                        워터뱅크 블루 히알루로닉 크림
-                      </p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_retinol.png"
-                        alt="라네즈 레티놀 잡티 플러스"
-                      />
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_retinol.png"
+                          alt="라네즈 래디언씨 더블 액티브 브라이트닝 에센스"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">레티놀 잡티 플러스</p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 래디언씨 더블 액티브 브라이트닝 에센스
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_sleeping.png"
-                        alt="라네즈 워터 슬리핑 마스크"
-                      />
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_sleeping.png"
+                          alt="라네즈 워터슬리핑마스크 EX 70ml"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">워터 슬리핑 마스크</p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 워터슬리핑마스크 EX 70ml
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_skinveil.png"
-                        alt="라네즈 스킨베일베이스 EX"
-                      />
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_skinveil.png"
+                          alt="라네즈 스킨베일베이스 EX_40호 듀오 세트"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
                     </div>
                     <div class="product-card__info">
-                      <p class="product-card__name">스킨베일베이스 EX</p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 스킨베일베이스 EX_40호 듀오 세트
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
                     </div>
-                  </a>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+
+                <ul class="product-grid-page">
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_neo.png"
+                          alt="라네즈 네오 파운데이션 17ON"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 네오 에센셜 블러링 피니시 파우더 (싱글)
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_cream.png"
+                          alt="라네즈 크림스킨 170ML"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">라네즈 크림스킨 170ML</p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_waterbank.png"
+                          alt="라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_retinol.png"
+                          alt="라네즈 래디언씨 더블 액티브 브라이트닝 에센스"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 래디언씨 더블 액티브 브라이트닝 에센스
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_sleeping.png"
+                          alt="라네즈 워터슬리핑마스크 EX 70ml"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 워터슬리핑마스크 EX 70ml
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+
+                  <li class="product-card">
+                    <div class="product-card__img-box">
+                      <a href="#">
+                        <img
+                          src="public/images/products/event2/e2_skinveil.png"
+                          alt="라네즈 스킨베일베이스 EX_40호 듀오 세트"
+                        />
+                      </a>
+                      <button
+                        type="button"
+                        class="btn-cart-square"
+                        aria-label="장바구니 담기"
+                      ></button>
+                    </div>
+                    <div class="product-card__info">
+                      <a href="#">
+                        <p class="product-card__name">
+                          라네즈 스킨베일베이스 EX_40호 듀오 세트
+                        </p>
+                        <div class="product-card__price-row">
+                          <span class="rate">70%</span>
+                          <span class="current">$11.7</span>
+                          <span class="original">$39</span>
+                        </div>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="scroll-tracker" aria-hidden="true">
+                <div class="scroll-tracker__bar"></div>
+              </div>
+            </div>
             </section>
 
             <!-- Event 3 : 세트상품 -->
@@ -507,95 +862,198 @@
                     src="public/images/products/event3/e3_sun.png"
                     alt="선크림 세트 상품"
                   />
+                  <div class="product-feature__pagination">
+                    <span class="dot is-active"></span>
+                    <span class="dot"></span>
+                  </div>
                 </div>
                 <div class="product-feature__info">
-                  <p class="product-feature__label">세트 구성</p>
-                  <h4 class="product-feature__name">
-                    라네즈 래디언C 선크림 세트
-                  </h4>
-
-                  <dl class="product-feature__price">
-                    <div>
-                      <dt>정상가</dt>
-                      <dd class="product-feature__price-original">69.6</dd>
+                  <!-- 상품 구성 -->
+                  <div class="product-feature__composition">
+                    <span class="composition-label">상품 구성</span>
+                    <div class="composition-thumbs">
+                      <img
+                        src="public/images/products/event3/e3_sun.png"
+                        alt="선크림"
+                      />
+                      <img
+                        src="public/images/products/event3/e3_neo.png"
+                        alt="파우더"
+                      />
                     </div>
-                    <div>
-                      <dt>행사가</dt>
-                      <dd>
-                        <span class="product-feature__discount">10%</span>
-                        <span class="product-feature__price-final">62.64</span>
-                      </dd>
-                    </div>
-                  </dl>
+                  </div>
 
-                  <button type="button" class="btn-primary">
-                    <span>장바구니 담기</span>
-                  </button>
+                  <!-- 가격 및 버튼 -->
+                  <div class="product-feature__bottom">
+                    <div class="product-feature__price-box">
+                      <div class="price-row-sm">
+                        <span class="label">할인적용가</span>
+                        <span class="original-price">$68</span>
+                      </div>
+                      <div class="price-row-lg">
+                        <span class="discount-rate">10%</span>
+                        <span class="final-price">$62.64</span>
+                      </div>
+                    </div>
+
+                    <button type="button" class="btn-cart-icon">
+                      <span>담기</span>
+                    </button>
+                  </div>
                 </div>
               </article>
             </section>
+
+          </div>
+          <div class="gray-background-area">
+            <div class="container">
 
             <!-- 브랜드관 -->
             <section
               class="brand-section"
               aria-labelledby="brand-section-title"
             >
-              <header class="section-head section-head--center">
-                <h3 id="brand-section-title" class="section-head__title">
-                  브랜드관
-                </h3>
-              </header>
 
               <ul class="brand-grid">
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_laneige.png"
-                    alt="라네즈"
-                  />
-                  <span>라네즈</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_laneige.png"
+                          alt="라네즈"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_laneige.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">라네즈</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_orthomol.png"
-                    alt="오쏘몰"
-                  />
-                  <span>오쏘몰</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_orthomol.png"
+                          alt="오쏘몰"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_orthomol.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">오쏘몰</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_centorum.png"
-                    alt="센트룸"
-                  />
-                  <span>센트룸</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_centorum.png"
+                          alt="센트룸"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_centorum.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">센트룸</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_onnuristore.png"
-                    alt="온누리스토어"
-                  />
-                  <span>온누리스토어</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_onnuristore.png"
+                          alt="온누리스토어"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_onnuristore.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">온누리스토어</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_hermes.png"
-                    alt="헤메레스"
-                  />
-                  <span>헤메레스</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_hermes.png"
+                          alt="헤메레스"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_hermes.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">헤메레스</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img src="public/images/brands/brand_gnc.png" alt="GNC" />
-                  <span>GNC</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_hermes.png"
+                          alt="헤메레스"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_hermes.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">헤메레스</span>
                 </li>
-                <li class="brand-grid__item">
-                  <img
-                    src="public/images/brands/brand_ckd.png"
-                    alt="종근당건강"
-                  />
-                  <span>종근당건강</span>
-                </li>
-                <li class="brand-grid__item">
-                  <img src="public/images/brands/brand_solgar.png" alt="솔가" />
-                  <span>솔가</span>
+                <li class="brand-card">
+                  <a href="#">
+                    <div class="brand-card__thumb">
+                      <div class="brand-card__overlay">
+                        <img
+                          class="brand-card__logo"
+                          src="public/images/brands/brand_logo/logo_ckd.png"
+                          alt="종근당건강"
+                        />
+                        <span class="brand-card__shop-label">BRAND SHOP</span>
+                      </div>
+                      <img
+                        class="brand-card__bg"
+                        src="public/images/brands/brand_ckd.png"
+                        alt=""
+                      />
+                    </div>
+                  </a>
+                  <span class="brand-card__name">종근당건강</span>
                 </li>
               </ul>
             </section>
@@ -604,162 +1062,33 @@
             <section class="notice-section" aria-labelledby="notice-title">
               <div class="notice-section__inner">
                 <h3 id="notice-title" class="notice-section__title">
-                  유의사항
+                  <span class="notice-icon">!</span> 유의사항
                 </h3>
                 <ul class="notice-section__list">
+                  <li>본 ID 당 1일 1회 증정됩니다.</li>
+                  <li>사은품은 중복 증정이 되지 않습니다.</li>
                   <li>
-                    행사 기간 및 할인율은 브랜드 사정에 따라 조기 변경될 수
-                    있습니다.
+                    사은품은 디자인 및 구성이 임의로 증정되며, 선택할 수
+                    없습니다.
                   </li>
-                  <li>
-                    준비된 수량 소진 시 별도 안내 없이 종료될 수 있습니다.
+                  <li class="text-red">
+                    사은품의 재고 소진 이후에도 해당 페이지와 관련 배너는 보여질
+                    수 있습니다.
                   </li>
-                  <li>일부 상품은 브랜드 별로 혜택이 상이할 수 있습니다.</li>
-                  <li>자세한 내용은 각 상품 상세 페이지를 참고해 주세요.</li>
                 </ul>
               </div>
             </section>
-
-            <!-- CTA -->
-            <div class="cta">
-              <button type="button" class="cta__button">
-                <img
-                  src="public/images/icons/btn_curation.png"
-                  alt=""
-                  aria-hidden="true"
-                />
-                <span>더 많은 기획전 행사가 궁금하다면</span>
-              </button>
             </div>
           </div>
+
         </section>
-
-        <!-- ===== 패널 2 : 추천상품 ===== -->
-        <section id="panel-recommend" class="panel">
-          <div class="container">
-            <section class="event-section" aria-labelledby="best-title">
-              <header class="section-head">
-                <h3 id="best-title" class="section-head__title">
-                  추천 SUN 베스트 상품
-                </h3>
-                <p class="section-head__desc">
-                  기획전 내에서 특히 반응이 좋은 인기 상품만 모았습니다.
-                </p>
-              </header>
-
-              <ul class="product-grid product-grid--three">
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_cream.png"
-                        alt="라네즈 네오 에센셜 블러링 피니시 파우더"
-                      />
-                    </div>
-                    <div class="product-card__info">
-                      <p class="product-card__name">
-                        라네즈 네오 에센셜 블러링 피니시 파우더
-                      </p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
-                    </div>
-                  </a>
-                  <button
-                    type="button"
-                    class="product-card__cart-btn"
-                    aria-label="장바구니에 담기"
-                  ></button>
-                </li>
-
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_retinol.png"
-                        alt="라네즈 레티놀 잡티 플러스"
-                      />
-                    </div>
-                    <div class="product-card__info">
-                      <p class="product-card__name">레티놀 잡티 플러스</p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
-                    </div>
-                  </a>
-                  <button
-                    type="button"
-                    class="product-card__cart-btn"
-                    aria-label="장바구니에 담기"
-                  ></button>
-                </li>
-
-                <li class="product-card">
-                  <a href="#">
-                    <div class="product-card__thumb">
-                      <img
-                        src="public/images/products/event2/e2_sleeping.png"
-                        alt="라네즈 워터 슬리핑 마스크"
-                      />
-                    </div>
-                    <div class="product-card__info">
-                      <p class="product-card__name">워터 슬리핑 마스크</p>
-                      <p class="product-card__discount">
-                        <span>70%</span><strong>11.7</strong>
-                      </p>
-                      <p class="product-card__price-original">$39</p>
-                    </div>
-                  </a>
-                  <button
-                    type="button"
-                    class="product-card__cart-btn"
-                    aria-label="장바구니에 담기"
-                  ></button>
-                </li>
-              </ul>
-            </section>
+        
+        <footer class="page-footer">
+          <div class="bottom-dots-area">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
-        </section>
-
-        <!-- ===== 패널 3 : 전체상품 ===== -->
-        <section id="panel-all" class="panel">
-          <div class="container">
-            <section class="event-section" aria-labelledby="all-title">
-              <header class="section-head">
-                <h3 id="all-title" class="section-head__title">
-                  전체 상품 한눈에 보기
-                </h3>
-                <p class="section-head__desc">
-                  실제 서비스에서는 검색 · 필터 기능이 들어가지만, 과제에서는
-                  레이아웃 구현에 초점을 두었습니다.
-                </p>
-              </header>
-
-              <div class="all-list">
-                <ul>
-                  <li>라네즈 SUN &amp; 베이스 제품 6종</li>
-                  <li>선크림 &amp; 마사지기 세트 상품 2종</li>
-                  <li>참여 브랜드 건강기능식품 및 기타 상품</li>
-                </ul>
-                <p class="all-list__help">
-                  ※ 과제 설명서에는 HTML 구조/네이밍, JS 인터랙션, 반응형 전략을
-                  정리해서 같이 제출하면 좋아.
-                </p>
-              </div>
-            </section>
-          </div>
-        </section>
-      </main>
-
-      <footer class="page-footer">
-        <div class="container">
-          <p>
-            ⓒ HYUNDAI DUTY FREE. 본 페이지는 포트폴리오/과제용으로 제작한 클론
-            코딩 예제입니다.
-          </p>
-        </div>
       </footer>
     </div>
 

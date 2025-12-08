@@ -58,3 +58,42 @@ if (breadcrumbToggle) {
     breadcrumbToggle.classList.toggle("is-active");
   });
 }
+
+// ---- Scroll Progress Tracker ----
+const trackers = document.querySelectorAll(".scroll-tracker");
+
+trackers.forEach((tracker) => {
+  // Find the scroll container within the same parent wrapper
+  // Priority: .product-slider-wrapper (Event 2) > ul (Event 1)
+  const container =
+    tracker.parentElement.querySelector(".product-slider-wrapper") ||
+    tracker.parentElement.querySelector("ul");
+  const bar = tracker.querySelector(".scroll-tracker__bar");
+
+  if (container && bar) {
+    const updateBar = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      // Width of the bar represents the visible portion
+      const widthPercent = (clientWidth / scrollWidth) * 100;
+
+      bar.style.width = `${widthPercent}%`;
+      bar.style.left = `${(scrollLeft / scrollWidth) * 100}%`;
+    };
+
+    // Initial update
+    requestAnimationFrame(updateBar);
+
+    // Update on scroll
+    container.addEventListener("scroll", () => {
+      requestAnimationFrame(updateBar);
+    });
+
+    // Update on resize
+    window.addEventListener("resize", updateBar);
+
+    // Also update when images load
+    container.querySelectorAll("img").forEach((img) => {
+      img.addEventListener("load", updateBar);
+    });
+  }
+});
