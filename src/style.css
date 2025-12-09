@@ -120,7 +120,7 @@ img {
   content: "";
   display: inline-block;
   width: 1px;
-  height: 12px;
+  height: 13px;
   margin: 0 8px;
   background: var(--color-line);
   opacity: 0.9;
@@ -130,8 +130,9 @@ img {
 .top-util a {
   color: var(--color-secondary);
   text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
   padding: 0;
 }
 
@@ -711,10 +712,10 @@ img {
 }
 .panel--active {
   display: block;
-  margin-top: 160px;
+  margin: 160px;
 }
 .event-section + .event-section {
-  margin-top: 96px;
+  margin: 160px 0;
 }
 
 /* =========================
@@ -771,6 +772,11 @@ img {
 /* =========================
    Event 1 브랜드 캐러셀
    ========================= */
+.brand-container {
+  width: 1024px;
+  margin: 0 auto;
+}
+
 .brand-carousel {
   position: relative;
   display: flex;
@@ -941,7 +947,7 @@ img {
 }
 
 /* 그리드 간격 살짝 넓게 */
-#panel-event .event-section:nth-of-type(2) .product-grid {
+.panel .event-section:nth-of-type(2) .product-grid {
   width: 804px;
   margin: 32px auto 0;
   gap: 40px 24px;
@@ -949,7 +955,7 @@ img {
 }
 
 /* Event 2 카드 스타일 */
-#panel-event .event-section:nth-of-type(2) .product-card__img-box {
+.panel .event-section:nth-of-type(2) .product-card__img-box {
   position: relative;
   background-color: #f5f7fa;
   border-radius: 12px;
@@ -961,7 +967,7 @@ img {
   aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
 }
 
-#panel-event .event-section:nth-of-type(2) .product-card__img-box img {
+.panel .event-section:nth-of-type(2) .product-card__img-box img {
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -1002,16 +1008,16 @@ img {
 }
 
 /* Event 2 텍스트 정보 */
-#panel-event .event-section:nth-of-type(2) .product-card__info {
+.panel .event-section:nth-of-type(2) .product-card__info {
   padding: 16px 0 0; /* 좌우 패딩 제거 */
 }
 
-#panel-event .event-section:nth-of-type(2) .product-card__info a {
+.panel .event-section:nth-of-type(2) .product-card__info a {
   text-decoration: none;
   color: inherit;
 }
 
-#panel-event .event-section:nth-of-type(2) .product-card__name {
+.panel .event-section:nth-of-type(2) .product-card__name {
   font-size: 13px;
   font-weight: 600;
   color: #1b1e23;
@@ -1026,24 +1032,24 @@ img {
   text-overflow: ellipsis;
 }
 
-#panel-event .event-section:nth-of-type(2) .product-card__price-row {
+.panel .event-section:nth-of-type(2) .product-card__price-row {
   display: flex;
   align-items: baseline;
   gap: 6px;
   font-size: 14px;
 }
 
-#panel-event .event-section:nth-of-type(2) .rate {
+.panel .event-section:nth-of-type(2) .rate {
   font-weight: 800;
   color: #1b1e23;
 }
 
-#panel-event .event-section:nth-of-type(2) .current {
+.panel .event-section:nth-of-type(2) .current {
   font-weight: 800;
   color: #ea2829; /* 빨강 */
 }
 
-#panel-event .event-section:nth-of-type(2) .original {
+.panel .event-section:nth-of-type(2) .original {
   font-size: 13px;
   color: #ccc;
   text-decoration: line-through;
@@ -1054,7 +1060,7 @@ img {
 
 /* Event 3 세트상품 카드 (시안 동일) */
 /* 1. 섹션 헤더 텍스트 너비 제한 (카드 너비와 동일하게) */
-#panel-event .event-section:nth-of-type(3) .section-head {
+.panel .event-section:nth-of-type(3) .section-head {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -1282,23 +1288,23 @@ img {
 }
 
 .brand-grid {
+  width: 100%;
   list-style: none;
   margin: 40px auto 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  max-width: 1020px; /* 6 items * (156 + 12) approx */
+  gap: 38px 12px;
 }
 
 /* notice + CTA */
 
 .notice-section {
+  width: 1080px;
   margin-top: 60px;
-  border-top: 1px dashed #e5e5e5;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  border-top: 1px dashed #dde0e5;
+  padding: 40px 0 40px 0;
 }
 
 .notice-section__inner {
@@ -1341,9 +1347,10 @@ img {
 .notice-section__list li {
   position: relative;
   padding-left: 10px;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
   color: #888;
-  line-height: 1.6;
 }
 
 .notice-section__list li::before {
@@ -1357,6 +1364,10 @@ img {
 }
 
 .notice-section__list li.text-red {
+  color: #ea2829;
+}
+
+.notice-section__list li.text-red::before {
   color: #ea2829;
 }
 
@@ -1459,7 +1470,7 @@ img {
 }
 
 /* Event 2 Slider Layout Override */
-#panel-event .event-section:nth-of-type(2) .product-slider-wrapper {
+.panel .event-section:nth-of-type(2) .product-slider-wrapper {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -1469,13 +1480,13 @@ img {
   margin: 32px auto 0;
 }
 
-#panel-event
+.panel
   .event-section:nth-of-type(2)
   .product-slider-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-#panel-event .event-section:nth-of-type(2) .product-grid-page {
+.panel .event-section:nth-of-type(2) .product-grid-page {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 24px;
@@ -1486,19 +1497,19 @@ img {
 }
 
 /* Reset previous overrides if any */
-#panel-event .event-section:nth-of-type(2) .product-card {
+.panel .event-section:nth-of-type(2) .product-card {
   /* Reset flex properties from previous slider attempt */
   flex: initial;
   min-width: initial;
 }
 
 @media (max-width: 768px) {
-  #panel-event .event-section:nth-of-type(2) .product-slider-wrapper {
+  .panel .event-section:nth-of-type(2) .product-slider-wrapper {
     width: 100%;
     padding: 0 16px;
   }
 
-  #panel-event .event-section:nth-of-type(2) .product-grid-page {
+  .panel .event-section:nth-of-type(2) .product-grid-page {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px 16px;
   }
@@ -1520,8 +1531,8 @@ img {
 .gray-background-area {
   background-color: #f9fafc;
   width: 100%;
-  padding-top: 96px;
-  padding-bottom: 60px;
+  margin-top: 80px;
+  padding: 48px 0 80px 0;
 }
 
 /* Remove margin-top from brand-section when inside gray area */
