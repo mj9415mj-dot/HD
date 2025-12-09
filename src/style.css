@@ -481,50 +481,55 @@ img {
 /* hero */
 
 .hero-banner {
+  width: 100%;
+  height: auto;
   background-color: var(--color-hero-bg);
-  padding-top: 24px; /* 상단 여백 */
-  padding-bottom: 350px; /* 하단 여백을 늘려 이미지와 겹칠 공간 확보 */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px; /* hero-top과 hero__text 사이 간격 */
+  position: relative;
+  z-index: 0;
+}
+
+.hero-banner::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  background-color: #ffffff;
+  z-index: -1;
 }
 
 .hero {
   position: relative;
-  padding: 56px 0 64px; /* 원래 쓰던 패딩 그대로 사용 */
-}
-
-/* hero 전체 높이를 그대로 따라가는 100% 배경 띠 */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0; /* ← height 대신 top+bottom 으로 100% */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw; /* 가로는 화면 꽉 */
-  background-color: var(--color-hero-bg);
-  z-index: -1; /* 컨텐츠 뒤로 */
 }
 
 .hero-container {
   max-width: 1350px;
-  margin: 0 auto;
-  padding: 0 16px; /* 좌우 여백 추가 */
-  display: flex;
   width: 100%;
-  justify-content: space-between; /* breadcrumb와 social 아이콘을 양끝으로 */
+  margin: 0 auto;
+  height: 30px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 16px;
 }
 
-.hero-content {
+.hero-container_box {
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: -340px; /* 배너 위로 더 많이 올라오도록 조정 */
-  position: relative;
-  z-index: 1;
+  flex-direction: column;
+}
+
+.hero-tabs-container {
+  width: 100%;
+  height: 53px;
 }
 
 .hero-top {
@@ -534,8 +539,10 @@ img {
 .hero-breadcrumb {
   display: flex;
   align-items: center;
-  font-size: 12px;
-  color: var(--color-secondary);
+  font-size: 13px;
+  letter-spacing: -0.05em;
+  color: #1b1e23;
+  font-weight: 400;
 }
 
 .hero-breadcrumb ol {
@@ -615,28 +622,39 @@ img {
   background-position: -460px -920px;
 }
 
+/* 제목 타이틀 박스 */
 .hero__text {
   text-align: center;
-  width: 100%; /* hero-container 내에서 중앙 정렬을 위해 */
+  width: 492px;
 }
 
+/* 부제목 상단 */
 .hero__date {
-  font-size: 14px;
-  color: var(--color-secondary);
   margin-bottom: 12px;
-}
-
-.hero__title {
-  font-size: 40px;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
-  margin: 0 0 12px;
-  font-weight: 800;
-}
-
-.hero__subtitle {
-  font-size: 15px;
+  width: 100%;
+  height: 29px;
+  font-size: 16px;
   color: var(--color-secondary);
+  letter-spacing: -0.4px;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* 부제목 */
+.hero__title {
+  font-size: 46px;
+  letter-spacing: -1.15px;
+  line-height: 60px;
+  font-weight: bold;
+  margin: 12px 0 24px 0;
+}
+
+/* 소제목 */
+.hero__subtitle {
+  font-size: 16px;
+  color: var(--color-secondary);
+  letter-spacing: -0.4px;
+  line-height: 24px;
   margin: 0;
 }
 
@@ -646,7 +664,7 @@ img {
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(90deg, #80a6cf 0%, #85aace 100%);
-  margin-bottom: 80px;
+  margin: 40px auto 20px;
   justify-self: center;
 }
 
@@ -661,47 +679,39 @@ img {
 .hero-tabs {
   display: flex;
   justify-content: center;
-  gap: 12px; /* 탭 간격 조정 */
-  border-bottom: 1px solid var(--color-line);
   width: 100%;
   padding-bottom: 12px;
 }
 
 .hero-tabs__btn {
-  min-width: 96px;
+  width: 207px;
+  height: 52px;
   border: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   padding: 8px 12px;
-  color: var(--color-secondary);
   cursor: pointer;
   position: relative;
+  font-weight: 400;
+  color: #abb2be;
 }
 
 .hero-tabs__btn.is-active {
   color: var(--color-primary);
+  color: #1b1e23;
   font-weight: 700;
-}
-
-.hero-tabs__btn.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: -13px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--color-primary);
+  border-bottom: 2px solid black;
 }
 /* =========================
    panels & sections (공통)
    ========================= */
 .panel {
   display: none;
-  padding: 72px 0 96px;
 }
 .panel--active {
   display: block;
+  margin-top: 160px;
 }
 .event-section + .event-section {
   margin-top: 96px;
@@ -718,24 +728,23 @@ img {
 }
 
 .section-head__eyebrow {
-  display: inline-flex;
   width: auto;
+  margin: 0 auto;
   max-width: fit-content;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
+  padding: 3px 16px 4px;
   background-color: var(--color-hero-bg-title);
-  color: #fff;
   font-size: 16px;
   font-weight: bold;
   line-height: 24px;
   letter-spacing: -0.4px;
-  padding: 3px 16px 4px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 15px;
 }
 
 .section-head__title {
   font-size: 34px;
-  margin: 0;
+  margin: 12px 0 12px 0;
   line-height: 1.4;
   letter-spacing: -0.04em;
   word-break: keep-all; /* 단어 단위로 줄바꿈하여 가독성 향상 */
@@ -746,6 +755,13 @@ img {
   color: var(--color-secondary);
   max-width: 420px; /* 최대 너비 설정 */
   word-break: keep-all; /* 단어 단위로 줄바꿈 */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 auto;
 }
 
 .section-head--center {

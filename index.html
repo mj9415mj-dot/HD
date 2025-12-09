@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -147,8 +147,9 @@
               </div>
             </div>
           </div>
+
           <section class="hero">
-            <div class="hero-container">
+            <div class="hero-container_box">
               <!-- hero__title: 이벤트명은 명사형으로 간결하게 표기 최대 3줄까지 입력 가능(공백 제외 20자 (포함 25자)) -->
               <div class="hero__text">
                 <p class="hero__date">2024.07.29 · 재고소진시까지</p>
@@ -161,52 +162,51 @@
                   전 구매 고객 대상 7개 브랜드 상품 할인!
                 </p>
               </div>
+              <div class="hero__image">
+                <img
+                  src="public/images/hero/hero_main.png"
+                  alt="라네즈 선케어 제품 이미지"
+                />
+              </div>
             </div>
           </section>
-        </div>
-
-        <div class="hero-content">
-          <div class="hero__image">
-            <img
-              src="public/images/hero/hero_main.png"
-              alt="라네즈 선케어 제품 이미지"
-            />
-          </div>
-
-          <!-- 상단 탭 -->
-          <nav class="hero-tabs" aria-label="기획전 탭">
-            <button
-              class="hero-tabs__btn is-active"
-              type="button"
-              data-target="panel-event"
-            >
-              행사
-            </button>
-            <button
-              class="hero-tabs__btn"
-              type="button"
-              data-target="panel-recommend"
-            >
-              추천상품
-            </button>
-            <button
+          
+          <div class="hero-tabs-container">
+            <!-- 상단 탭 -->
+            <nav class="hero-tabs" aria-label="기획전 탭">
+                <button
+                  class="hero-tabs__btn is-active"
+                  type="button"
+                  data-target="panel-event"
+                  >
+                  행사
+                </button>
+                <button
+                class="hero-tabs__btn"
+                type="button"
+                data-target="panel-recommend"
+                >
+                추천상품
+              </button>
+              <button
               class="hero-tabs__btn"
               type="button"
               data-target="panel-all"
-            >
+              >
               전체상품
             </button>
-          </nav>
+           </nav>
+        </div>
         </div>
 
         <!-- ===== 패널 1 : 행사 ===== -->
-        <section id="panel-event" class="panel panel--active">
+        <section class="panel panel--active">
           <div class="container">
             <!-- Event 1 : 브랜드 배너 -->
             <section class="event-section" aria-labelledby="event1-title">
               <header class="section-head section-head--center">
                 <p class="section-head__eyebrow">Event 1</p>
-                <h3 id="event1-title" class="section-head__title">
+                <h3 class="section-head__title">
                   라네즈 외 7개 브랜드<br />40% 할인
                 </h3>
                 <p class="section-head__desc">
