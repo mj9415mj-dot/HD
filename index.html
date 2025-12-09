@@ -25,7 +25,15 @@
                   width="16"
                   height="16"
                 />
-                <span class="topbar__lang-code">KR</span>
+                  <span class="topbar__lang-code">KR</span>
+                  <img
+                  class="topbar__lang-arrow"
+                  src="public/svg/icon_arrow_bold.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width="20"
+                  height="15"
+                  />
               </button>
               <div class="topbar__divider" aria-hidden="true"></div>
               <div class="topbar__rate">$1 = 1,129원</div>
@@ -71,9 +79,10 @@
                   id="site-search"
                   class="search__input"
                   type="search"
-                  placeholder="봄맞이 🌸 신상품 20% 할인 행사"
+                  placeholder="봄맞이🌸 신상품 20% 할인 행사"
                   aria-label="사이트 검색"
                 />
+                <span class="search__hash" aria-hidden="true">#</span>
                 <img
                   class="search__icon"
                   src="public/svg/icon_gnb_search.svg"
@@ -498,7 +507,7 @@
             <section class="event-section" aria-labelledby="event2-title">
               <header class="section-head section-head--center">
                 <p class="section-head__eyebrow">Event 2</p>
-                <h3 id="event2-title" class="section-head__title">
+                <h3 class="section-head__title">
                   햇살 가리는 SUN 제품<br />70% 할인
                 </h3>
                 <p class="section-head__desc">
@@ -853,7 +862,7 @@
             <section class="event-section" aria-labelledby="event3-title">
               <header class="section-head section-head--center">
                 <p class="section-head__eyebrow">Event 3</p>
-                <h3 id="event3-title" class="section-head__title">
+                <h3 class="section-head__title">
                   해를 가려라, SUN 제품<br />세트상품 10% 할인
                 </h3>
                 <p class="section-head__desc">
@@ -878,14 +887,18 @@
                   <div class="product-feature__composition">
                     <span class="composition-label">상품 구성</span>
                     <div class="composition-thumbs">
-                      <img
-                        src="public/images/products/event3/e3_sun.png"
-                        alt="선크림"
-                      />
-                      <img
-                        src="public/images/products/event3/e3_neo.png"
-                        alt="파우더"
-                      />
+                      <div class="composition-thumb">
+                        <img
+                          src="public/images/products/event3/e3_sun.png"
+                          alt="선크림"
+                        />
+                      </div>
+                      <div class="composition-thumb">
+                        <img
+                          src="public/images/products/event3/e3_neo.png"
+                          alt="파우더"
+                        />
+                      </div>
                     </div>
                   </div>
 

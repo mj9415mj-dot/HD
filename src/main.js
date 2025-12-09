@@ -97,3 +97,11 @@ trackers.forEach((tracker) => {
     });
   }
 });
+
+// Language toggle
+const langBtn = document.querySelector(".topbar__lang");
+if (langBtn) {
+  langBtn.addEventListener("click", () => {
+    langBtn.classList.toggle("is-active");
+  });
+}
