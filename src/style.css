@@ -81,7 +81,6 @@ img {
   width: 100%;
   max-width: 1356px; /* 섹션 안 실제 내용 폭 */
   margin: 0 auto; /* 가운데 정렬 */
-  padding: 0 16px; /* 양 옆 여백 */
 }
 
 .site-header {
@@ -514,11 +513,10 @@ img {
   width: 100%;
   margin: 0 auto;
   height: 30px;
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
 }
 
 .hero-container_box {
@@ -569,27 +567,17 @@ img {
 }
 
 .breadcrumb-toggle {
-  width: 20px;
-  height: 20px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
+  width: 16px;
+  height: 17px;
+  background: none;
+  border: none;
   margin-left: 8px;
-  position: relative;
+  padding: 0;
   transition: transform 0.3s ease;
 }
 
 .breadcrumb-toggle::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  border-style: solid;
-  border-color: var(--color-secondary);
-  border-width: 0 1.5px 1.5px 0;
-  transform: translate(-50%, -75%) rotate(45deg);
-  transition: transform 0.3s ease;
+  display: none;
 }
 
 .breadcrumb-toggle.is-active {
@@ -1401,8 +1389,10 @@ img {
 /* footer */
 
 .page-footer {
+  width: 100%;
+  height: 93px;
   border-top: none;
-  padding: 0 0 60px;
+
   font-size: 12px;
   color: #ccc;
   background-color: transparent;
