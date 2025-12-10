@@ -1446,6 +1446,24 @@ img {
   margin: 0;
 }
 
+.bottom-dots-area {
+  height: auto;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.bottom-dots-area .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #dde0e5;
+  display: block;
+}
+
 /* micro interaction : toast */
 .toast {
   position: fixed;
@@ -1712,10 +1730,19 @@ body {
   /* =========================================
        Notice Section Responsive
        ========================================= */
+  .gray-background-area {
+    padding-bottom: 0;
+  }
+
   .notice-section {
     width: 100%;
-    padding: 30px 0;
+    padding: 30px 0 32px 0; /* Bottom padding 32px for gap */
     box-sizing: border-box;
+  }
+
+  .page-footer {
+    border-top: 8px solid #eef0f2;
+    height: auto;
   }
 
   .notice-section__inner {
