@@ -796,7 +796,8 @@ img {
   scroll-behavior: smooth;
   list-style: none;
   margin: 0 auto;
-  width: 1048px; /* 6개 아이템 (160*6 + 16*5) + 좌우패딩 8 */
+  width: 100%;
+  max-width: 1048px; /* 6개 아이템 (160*6 + 16*5) + 좌우패딩 8 */
 }
 
 /* 스크롤바 숨기기 */
