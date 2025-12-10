@@ -1830,208 +1830,197 @@ body {
   }
 }
 
-/* Duplicate section start - ignored */
-.gray-background-area-duplicate-removed {
+/* =========================================
+   Mobile Header & Hero Styles
+   ========================================= */
+.mobile-wrapper {
   display: none;
 }
 
-/* =========================================
-   Responsive Styles (Added)
-   ========================================= */
-
-/* 페이지 전체 최소 너비 설정 */
-body {
-  min-width: 357px;
-}
-
 @media (max-width: 768px) {
-  /* Container Padding */
-  .container,
-  .brand-container {
-    padding-left: 20px;
-    padding-right: 20px;
+  /* Hide Desktop Header */
+  .site-header .topbar,
+  .site-header .hd-header {
+    display: none;
   }
 
-  /* Event 1 - 라네즈 외 7개 브랜드 40% 할인 구역 반응형 */
+  .site-header {
+    padding-top: 0;
+  }
 
-  /* 캐러셀 컨테이너 패딩 조정 (화살표 공간 제거) */
-  .brand-carousel {
-    padding: 0 0 40px 0;
+  /* Show Mobile Wrapper */
+  .mobile-wrapper {
     display: block;
+    background-color: #fff;
   }
 
-  /* 좌우 슬라이드 화살표 버튼 숨김 */
-  .brand-carousel__control {
-    display: none;
-  }
-
-  /* 브랜드 카드 리스트: Flex 레이아웃으로 변경 (중앙 정렬) */
-  .brand-carousel__list {
+  /* Status Bar */
+  .mobile-status-bar {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* 마지막 줄 중앙 정렬 */
-    gap: 12px; /* 카드 사이 간격 */
-    padding: 0; /* 모바일 좌우 여백 제거 (컨테이너 패딩 사용) */
-    width: 100%; /* 고정 너비 해제 */
-    overflow: visible; /* 가로 스크롤 제거 */
-    box-sizing: border-box;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
   }
 
-  /* 브랜드 카드 스타일 리셋 */
-  .brand-card {
-    /* 한 줄에 3개: (100% - gap*2) / 3 */
-    width: calc((100% - 24px) / 3);
-    flex: none;
+  .status-icons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
   }
 
-  /* 이미지 정사각형 비율 유지 */
-  .brand-card__thumb {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px; /* 모바일에서 둥근 모서리 강조 */
-  }
-
-  /* 이미지가 썸네일 영역을 꽉 채우도록 설정 */
-  .brand-card__bg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .brand-card__name {
-    font-size: 13px; /* 모바일 폰트 사이즈 조정 */
-    margin-top: 6px;
-  }
-
-  /* 스크롤 트래커 숨김 (그리드 뷰에서는 불필요) */
-  .brand-carousel .scroll-tracker {
-    display: none;
-  }
-
-  /* Brand Section (Bottom) Responsive */
-  .brand-container {
-    width: 100%;
-    /* padding: 0; Removed to allow global container padding */
-  }
-
-  .brand-section {
-    margin-top: 40px;
+  /* Mobile Header */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 20px;
     position: relative;
   }
 
-  /* 브랜드관 타이틀 추가 (CSS Content) */
-  .brand-section::before {
-    content: "브랜드관";
-    display: block;
-    text-align: center;
+  .mobile-header__title {
     font-size: 18px;
-    font-weight: bold;
-    color: #1b1e23;
-    margin-bottom: 20px;
-  }
-
-  .brand-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px; /* 모바일 간격 조정 */
-    padding: 0;
-    margin-top: 0;
-  }
-
-  /* =========================================
-       Notice Section Responsive
-       ========================================= */
-  .gray-background-area {
-    padding-bottom: 0;
-    background-color: transparent;
-  }
-
-  .notice-section {
-    width: 100%;
-    padding: 30px 0 32px 0; /* Bottom padding 32px for gap */
-    box-sizing: border-box;
-  }
-
-  .page-footer {
-    border-top: 8px solid #eef0f2;
-    height: auto;
-  }
-
-  .notice-section__inner {
-    width: 100%;
-    max-width: none;
-  }
-
-  /* 모바일에서 버튼 표시 및 스타일링 */
-  .btn-more-event {
-    margin-top: 24px;
-    /* 핑크-보라 그라데이션 */
-    border-radius: 4px;
-    background: linear-gradient(90deg, #ea2869 0%, #5a3ff2 100%);
-    display: flex;
-    width: 100%;
-    height: 48px;
-    padding: 12px 28px 12px 27px;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    font-size: 16px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 24px; /* 150% */
-    letter-spacing: -0.8px;
-  }
-}
-
-/* =========================================
-   Utility Classes for Responsive Display
-   ========================================= */
-.is-mobile-only {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  .is-desktop-only {
-    display: none !important;
+    line-height: 27px;
+    letter-spacing: -0.9px;
+    color: #1b1e23;
+    text-align: center;
   }
 
-  .is-mobile-only {
-    display: block !important;
-  }
-
-  /* 브랜드관에서 BRAND SHOP 라벨 숨김 */
-  .brand-grid .brand-card__shop-label,
-  .brand-carousel__list .brand-card__shop-label {
-    display: none;
-  }
-
-  /* Event 2 Pagination Dots Visible on Mobile */
-  .slider-pagination {
+  .mobile-header__right {
     display: flex;
+    align-items: center;
+    gap: 16px;
   }
 
-  /* Event 2 Price Row Layout for Mobile */
-  .panel .product-card__price-row {
-    flex-wrap: wrap;
-    gap: 0 6px;
+  .mobile-header__left button,
+  .mobile-header__right button {
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
   }
 
-  .panel .rate {
-    order: 1;
-    font-size: 14px;
+  .btn-cart {
+    position: relative;
+    overflow: visible;
+    width: 24px;
+    height: 24px;
   }
 
-  .panel .original {
-    order: 2;
+  .btn-cart::before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../public/svg/icon_gnb_cart.svg");
+    background-size: 24px 48px; /* Sprite size scaled for 24px width */
+    background-position: 0 0; /* Top (Black) */
+  }
+
+  .btn-cart:hover::before {
+    background-position: 0 -24px; /* Bottom (Red) */
+  }
+
+  .cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    background-color: #ea2829;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2px;
+    line-height: 1;
+  }
+
+  /* Hero Section Mobile Styles */
+
+  .hero-top {
+    display: none; /* Hide breadcrumbs and social icons */
+  }
+
+  .hero {
+    padding: 40px 0 0 0;
+  }
+
+  .hero-container_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__text {
+    margin-bottom: 24px;
+  }
+
+  .hero__date {
     font-size: 13px;
+    color: #5c6677;
+    margin-bottom: 12px;
   }
 
-  .panel .current {
-    order: 3;
+  .hero__title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #1b1e23;
+    margin-bottom: 12px;
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    color: #5c6677;
+    margin: 0;
+  }
+
+  .hero__image {
     width: 100%;
-    margin-top: 4px;
-    font-size: 16px;
+    min-width: 335px; /* Adjust based on image size */
+    margin: 0 auto;
+    height: 280px;
+  }
+
+  .hero__image img {
+    width: 100%;
+    border-radius: 12px; /* Rounded corners for the image */
+  }
+
+  /* Tabs adjustments if needed */
+  .hero-tabs-container {
+    background-color: #fff;
+    border-radius: 20px 20px 0 0; /* Rounded top corners for the white content area */
+    margin-top: -20px; /* Overlap with hero image/bg if desired, or just 0 */
+    position: relative;
+    z-index: 1;
+    padding-top: 10px;
+  }
+
+  /* If the design shows the tabs on white background starting immediately */
+  .hero-tabs {
+    justify-content: space-around;
+    border-bottom: 1px solid #eef0f2;
+  }
+
+  .hero-tabs__btn {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 15px;
   }
 }
