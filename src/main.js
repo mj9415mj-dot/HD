@@ -68,16 +68,12 @@ trackers.forEach((tracker) => {
   const container =
     tracker.parentElement.querySelector(".product-slider-wrapper") ||
     tracker.parentElement.querySelector("ul");
-  const bar = tracker.querySelector(".scroll-tracker__bar");
 
-  if (container && bar) {
+  if (container) {
     const updateBar = () => {
       const { scrollLeft, scrollWidth, clientWidth } = container;
       // Width of the bar represents the visible portion
       const widthPercent = (clientWidth / scrollWidth) * 100;
-
-      bar.style.width = `${widthPercent}%`;
-      bar.style.left = `${(scrollLeft / scrollWidth) * 100}%`;
     };
 
     // Initial update

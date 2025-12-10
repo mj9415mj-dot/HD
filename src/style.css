@@ -782,8 +782,7 @@ img {
 
 .brand-carousel {
   position: relative;
-  display: flex;
-  align-items: center;
+  display: block;
   margin-top: 28px;
   padding: 0 72px 48px; /* 좌우 화살표 공간 + 아래 인디케이터 여백 */
 }
@@ -1515,7 +1514,7 @@ img {
   left: 0;
   height: 100%;
   background-color: #000;
-  width: 0; /* JS로 제어 */
+  width: 50%;
   transition: transform 0.1s linear;
   will-change: transform, width;
 }
