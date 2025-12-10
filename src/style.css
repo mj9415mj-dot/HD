@@ -1639,9 +1639,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  /* Container Padding */
+  /* Container Padding - Consolidated for all main sections */
   .container,
-  .brand-container {
+  .brand-container,
+  .mobile-wrapper,
+  .hero {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1860,7 +1862,6 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 44px;
-    padding: 0 20px;
     font-size: 15px;
     font-weight: 600;
     color: #000;
@@ -1878,7 +1879,6 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    padding: 0 20px;
     position: relative;
   }
 
@@ -1949,13 +1949,17 @@ body {
   }
 
   /* Hero Section Mobile Styles */
+  .hero-banner {
+    background-color: var(--color-hero-bg); /* Light blue background */
+    padding-bottom: 0;
+  }
 
   .hero-top {
     display: none; /* Hide breadcrumbs and social icons */
   }
 
   .hero {
-    padding: 40px 0 0 0;
+    padding-top: 40px;
   }
 
   .hero-container_box {
@@ -1963,6 +1967,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 30px;
   }
 
   .hero__text {
@@ -1991,13 +1996,17 @@ body {
 
   .hero__image {
     width: 100%;
-    min-width: 335px; /* Adjust based on image size */
+    max-width: none;
     margin: 0 auto;
-    height: 280px;
+    height: auto;
+    aspect-ratio: auto;
+    border-radius: 12px;
   }
 
   .hero__image img {
     width: 100%;
+    height: auto;
+    object-fit: contain;
     border-radius: 12px; /* Rounded corners for the image */
   }
 
