@@ -1537,58 +1537,71 @@ img {
 @media (max-width: 768px) {
   .panel .product-slider-wrapper {
     width: 100%;
-    padding: 0 16px;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .panel .product-grid-page {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 16px;
+    flex: 0 0 100%;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 8px;
+    box-sizing: border-box;
+  }
+
+  /* Hide scroll tracker on mobile for Event 2 */
+  .event-section[aria-labelledby="event2-title"] .scroll-tracker {
+    display: none;
+  }
+
+  /* Show pagination dots on mobile */
+  .slider-pagination {
+    display: flex;
+  }
+
+  /* Event 2 Price Row Layout for Mobile */
+  .panel .product-card__price-row {
+    flex-wrap: wrap;
+    gap: 0 6px;
+  }
+
+  .panel .rate {
+    order: 1;
+    font-size: 14px;
+  }
+
+  .panel .original {
+    order: 2;
+    font-size: 13px;
+  }
+
+  .panel .current {
+    order: 3;
+    width: 100%;
+    margin-top: 4px;
+    font-size: 16px;
   }
 }
 
-/* Event 1 Scroll Tracker Positioning */
-.brand-carousel .scroll-tracker {
-  position: absolute;
-  bottom: 14px; /* Match original line position */
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-  z-index: 1;
-}
-
-/* =========================
-   Gray Background Area (Brand + Notice)
-   ========================= */
-.gray-background-area {
-  background-color: #f9fafc;
-  width: 100%;
-  padding: 48px 0 80px 0;
-  height: auto; /* 높이 자동 확장 */
-}
-
-/* Remove margin-top from brand-section when inside gray area */
-.gray-background-area .brand-section {
-  margin-top: 0;
-}
-
-/* =========================
-   Bottom Dots Area
-   ========================= */
-.bottom-dots-area {
-  height: 93px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
+/* Event 2 Slider Pagination (Mobile Only) */
+.slider-pagination {
+  display: none; /* Hidden on desktop */
   justify-content: center;
-  align-items: center;
-  gap: 6px;
+  gap: 8px;
+  margin-top: 20px;
 }
 
-.bottom-dots-area .dot {
-  width: 4px;
-  height: 4px;
-  background-color: #d9d9d9;
+.slider-pagination .dot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background-color: #dde0e5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-pagination .dot.is-active {
+  background-color: #1b1e23;
 }
 
 /* =========================================
@@ -1601,6 +1614,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Container Padding */
+  .container,
+  .brand-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   /* Event 1 - 라네즈 외 7개 브랜드 40% 할인 구역 반응형 */
 
   /* 캐러셀 컨테이너 패딩 조정 (화살표 공간 제거) */
@@ -1620,7 +1640,7 @@ body {
     flex-wrap: wrap;
     justify-content: center; /* 마지막 줄 중앙 정렬 */
     gap: 12px; /* 카드 사이 간격 */
-    padding: 0 20px; /* 모바일 좌우 여백 */
+    padding: 0; /* 모바일 좌우 여백 제거 (컨테이너 패딩 사용) */
     width: 100%; /* 고정 너비 해제 */
     overflow: visible; /* 가로 스크롤 제거 */
     box-sizing: border-box;
@@ -1661,7 +1681,7 @@ body {
   /* Brand Section (Bottom) Responsive */
   .brand-container {
     width: 100%;
-    padding: 0;
+    /* padding: 0; Removed to allow global container padding */
   }
 
   .brand-section {
@@ -1685,7 +1705,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px; /* 모바일 간격 조정 */
-    padding: 0 20px;
+    padding: 0;
     margin-top: 0;
   }
 
@@ -1694,7 +1714,7 @@ body {
        ========================================= */
   .notice-section {
     width: 100%;
-    padding: 30px 20px;
+    padding: 30px 0;
     box-sizing: border-box;
   }
 
@@ -1705,18 +1725,22 @@ body {
 
   /* 모바일에서 버튼 표시 및 스타일링 */
   .btn-more-event {
-    display: block;
-    width: 100%;
-    height: 52px;
     margin-top: 24px;
-    border-radius: 8px;
     /* 핑크-보라 그라데이션 */
-    background: linear-gradient(96deg, #e92658 0%, #582be8 100%);
+    border-radius: 4px;
+    background: linear-gradient(90deg, #ea2869 0%, #5a3ff2 100%);
+    display: flex;
+    width: 100%;
+    height: 48px;
+    padding: 12px 28px 12px 27px;
+    justify-content: center;
+    align-items: center;
     color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.8px;
   }
 }
 
@@ -1740,5 +1764,33 @@ body {
   .brand-grid .brand-card__shop-label,
   .brand-carousel__list .brand-card__shop-label {
     display: none;
+  }
+
+  /* Event 2 Pagination Dots Visible on Mobile */
+  .slider-pagination {
+    display: flex;
+  }
+
+  /* Event 2 Price Row Layout for Mobile */
+  .panel .product-card__price-row {
+    flex-wrap: wrap;
+    gap: 0 6px;
+  }
+
+  .panel .rate {
+    order: 1;
+    font-size: 14px;
+  }
+
+  .panel .original {
+    order: 2;
+    font-size: 13px;
+  }
+
+  .panel .current {
+    order: 3;
+    width: 100%;
+    margin-top: 4px;
+    font-size: 16px;
   }
 }

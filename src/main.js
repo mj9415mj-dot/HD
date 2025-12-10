@@ -98,6 +98,43 @@ trackers.forEach((tracker) => {
   }
 });
 
+// ---- Slider Pagination (Event 2 Mobile) ----
+const sliderPagination = document.querySelector(".slider-pagination");
+if (sliderPagination) {
+  // Find the slider wrapper in the same section
+  const section = sliderPagination.closest(".event-section");
+  const container = section
+    ? section.querySelector(".product-slider-wrapper")
+    : null;
+  const dots = sliderPagination.querySelectorAll(".dot");
+
+  if (container && dots.length > 0) {
+    const updateDots = () => {
+      const { scrollLeft, clientWidth } = container;
+      // Calculate current page index (0 or 1)
+      const index = Math.round(scrollLeft / clientWidth);
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("is-active", i === index);
+      });
+    };
+
+    container.addEventListener("scroll", () => {
+      requestAnimationFrame(updateDots);
+    });
+
+    // Click on dot to scroll
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        container.scrollTo({
+          left: i * container.clientWidth,
+          behavior: "smooth",
+        });
+      });
+    });
+  }
+}
+
 // Language toggle
 const langBtn = document.querySelector(".topbar__lang");
 if (langBtn) {
