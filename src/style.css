@@ -1644,4 +1644,35 @@ body {
   .brand-carousel .scroll-tracker {
     display: none;
   }
+
+  /* Brand Section (Bottom) Responsive */
+  .brand-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .brand-section {
+    margin-top: 40px;
+    position: relative;
+  }
+
+  /* 브랜드관 타이틀 추가 (CSS Content) */
+  .brand-section::before {
+    content: "브랜드관";
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #1b1e23;
+    margin-bottom: 20px;
+  }
+
+  .brand-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px; /* 모바일 간격 조정 */
+    padding: 0 20px;
+    margin-top: 0;
+  }
 }
