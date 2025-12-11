@@ -77,9 +77,10 @@ img {
 
 /* 공통 컨테이너: 섹션 내부 컨텐츠 폭 */
 .container {
-  width: 100%;
-  max-width: 1356px; /* 섹션 안 실제 내용 폭 */
-  margin: 0 auto; /* 가운데 정렬 */
+  /* 화면이 넓을 땐 최대 1356px,
+     그보다 좁을 땐 항상 좌우 24px 여백이 남도록 */
+  width: min(1356px, 100% - 48px); /* 48px = 좌우 24px씩 */
+  margin-inline: auto;
 }
 
 .site-header {
@@ -556,7 +557,6 @@ img {
 
 .hero-container {
   max-width: 1350px;
-  width: 100%;
   margin: 0 auto;
   height: 30px;
   margin-top: 16px;
@@ -566,10 +566,13 @@ img {
 }
 
 .hero-container_box {
-  width: 100%;
+  /* width: 100%;  ← 이 줄 없애기! */
   display: flex;
   align-items: center;
   flex-direction: column;
+  /* 선택 사항: 안쪽 콘텐츠 최대 폭 제한하고 싶으면 추가 */
+  max-width: 804px;
+  margin: 0 auto;
 }
 
 .hero-tabs-container {
@@ -807,9 +810,10 @@ img {
    Event 1 브랜드 캐러셀
    ========================= */
 .brand-container {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
+  /* 브랜드관은 최대 1024px,
+     그보다 좁을 땐 마찬가지로 좌우 24px 여백 */
+  width: min(1024px, 100% - 48px);
+  margin-inline: auto;
 }
 
 .brand-carousel {
@@ -1695,6 +1699,8 @@ body {
   .container,
   .brand-container,
   .mobile-wrapper {
+    width: 100%;
+    max-width: none;
     padding-left: 20px;
     padding-right: 20px;
   }
