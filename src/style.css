@@ -854,6 +854,11 @@ img {
 .brand-card__bg {
   display: block;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brand-card:hover .brand-card__bg {
+  transform: scale(1.1);
 }
 
 .brand-card__overlay {
@@ -990,6 +995,11 @@ img {
   height: auto;
   object-fit: cover;
   mix-blend-mode: multiply; /* 흰 배경 이미지 자연스럽게 합성 */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__img-box img {
+  transform: scale(1.1);
 }
 
 /* Event 2 장바구니 버튼 (이미지 우측 하단) */
