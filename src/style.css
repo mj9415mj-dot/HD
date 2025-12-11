@@ -80,7 +80,6 @@ img {
   width: 100%;
   max-width: 1356px; /* 섹션 안 실제 내용 폭 */
   margin: 0 auto; /* 가운데 정렬 */
-  padding-inline: clamp(12px, 4vw, 24px);
 }
 
 .site-header {
@@ -1362,6 +1361,7 @@ img {
 
 .brand-grid {
   width: 100%;
+  max-width: 1060px;
   list-style: none;
   margin: 40px auto 0;
   padding: 0;
