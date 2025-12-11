@@ -1,3 +1,18 @@
+// ---- 장바구니 카운터 ----
+let cartCount = 0;
+const cartBadge = document.querySelector(".cart-badge");
+
+const updateCartBadge = () => {
+  if (cartBadge) {
+    if (cartCount > 0) {
+      cartBadge.textContent = cartCount;
+      cartBadge.style.display = "flex";
+    } else {
+      cartBadge.style.display = "none";
+    }
+  }
+};
+
 // ---- 장바구니 / CTA 버튼 토스트 알림 ----
 const featureCartBtn = document.querySelector(".product-feature .btn-primary");
 const ctaBtn = document.querySelector(".cta__button");
@@ -19,6 +34,8 @@ const showToast = (message) => {
 
 if (featureCartBtn) {
   featureCartBtn.addEventListener("click", () => {
+    cartCount++;
+    updateCartBadge();
     showToast("선크림 세트가 장바구니에 담겼어요 😊");
   });
 }
@@ -28,6 +45,17 @@ if (ctaBtn) {
     showToast("다른 기획전도 준비 중입니다.");
   });
 }
+
+// ---- Event 2 장바구니 버튼 ----
+const event2CartButtons = document.querySelectorAll(".btn-cart-square");
+event2CartButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    cartCount++;
+    updateCartBadge();
+    showToast("장바구니에 담겼습니다 :)");
+  });
+});
 
 // 헤더 상호작용: 메뉴 토글, 검색 포커스
 const menuBtn = document.querySelector(".hd-header__menu");
