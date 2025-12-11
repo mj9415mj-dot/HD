@@ -40,6 +40,16 @@ if (featureCartBtn) {
   });
 }
 
+// ---- Event 3 장바구니 버튼 (추가) ----
+const event3CartBtn = document.querySelector(".btn-cart-icon");
+if (event3CartBtn) {
+  event3CartBtn.addEventListener("click", () => {
+    cartCount++;
+    updateCartBadge();
+    showToast("선크림 세트가 장바구니에 담겼어요 😊");
+  });
+}
+
 if (ctaBtn) {
   ctaBtn.addEventListener("click", () => {
     showToast("다른 기획전도 준비 중입니다.");
