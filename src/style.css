@@ -1545,7 +1545,7 @@ img {
 .scroll-tracker {
   position: relative;
   width: 252px;
-  height: 2px;
+  height: 3px;
   background-color: #e5e5e5;
   margin: 40px auto 0;
   overflow: hidden;
@@ -1558,34 +1558,56 @@ img {
   height: 100%;
   background-color: #000;
   width: 50%;
-  transition: transform 0.1s linear;
+  transition: transform 0.4s ease;
   will-change: transform, width;
 }
 
 /* Event 2 Slider Layout Override */
 .panel .product-slider-wrapper {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   width: 100%;
   max-width: 804px;
   margin: 32px auto 0;
+  overflow: hidden; /* Hide overflow for sliding */
 }
 
-.panel .product-slider-wrapper::-webkit-scrollbar {
-  display: none;
+.event2-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.4s ease;
 }
 
-.panel .product-grid-page {
+.event2-page {
+  flex: 0 0 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 24px;
-  min-width: 100%; /* Each page takes full width */
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+/* Event 2 Indicator */
+.event2-indicator {
+  display: none; /* Hidden on desktop */
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.event2-indicator .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.event2-indicator .dot.is-active {
+  background-color: #000;
 }
 
 /* Reset previous overrides if any */
@@ -1602,6 +1624,15 @@ img {
     box-sizing: border-box;
   }
 
+  /* Show dots on mobile, hide bar */
+  .event2-indicator {
+    display: flex;
+  }
+
+  .event-section[aria-labelledby="event2-title"] .scroll-tracker {
+    display: none;
+  }
+
   .panel .product-grid-page {
     flex: 0 0 100%;
     width: 100%;
@@ -1609,17 +1640,6 @@ img {
     gap: 24px 8px;
     box-sizing: border-box;
   }
-
-  /* Hide scroll tracker on mobile for Event 2 */
-  .event-section[aria-labelledby="event2-title"] .scroll-tracker {
-    display: none;
-  }
-
-  /* Show pagination dots on mobile */
-  .slider-pagination {
-    display: flex;
-  }
-
   /* Event 2 Price Row Layout for Mobile */
   .panel .product-card__price-row {
     flex-wrap: wrap;

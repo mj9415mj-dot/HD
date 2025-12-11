@@ -97,45 +97,76 @@ if (breadcrumbToggle) {
   });
 }
 
-// ---- Scroll Progress Tracker ----
-const trackers = document.querySelectorAll(".scroll-tracker");
+// ---- Event 2 Page Slide ----
+const event2Section = document.querySelector(
+  '.event-section[aria-labelledby="event2-title"]'
+);
+if (event2Section) {
+  const track = event2Section.querySelector(".event2-track");
+  const dots = event2Section.querySelectorAll(".event2-indicator .dot");
+  const barTracker = event2Section.querySelector(".scroll-tracker");
+  const bar = barTracker
+    ? barTracker.querySelector(".scroll-tracker__bar")
+    : null;
 
-trackers.forEach((tracker) => {
-  // Find the scroll container within the same parent wrapper
-  // Priority: .product-slider-wrapper (Event 2) > ul (Event 1)
-  const container =
-    tracker.parentElement.querySelector(".product-slider-wrapper") ||
-    tracker.parentElement.querySelector("ul");
+  const goToPage = (index) => {
+    // Slide track
+    if (track) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
 
-  if (container) {
-    const updateBar = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-      // Width of the bar represents the visible portion
-      const widthPercent = (clientWidth / scrollWidth) * 100;
-    };
+    // Update dots (Mobile)
+    if (dots.length > 0) {
+      dots.forEach((d, i) => {
+        const isActive = i === index;
+        d.classList.toggle("is-active", isActive);
+        d.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+    }
 
-    // Initial update
-    requestAnimationFrame(updateBar);
+    // Update bar (Desktop)
+    if (bar) {
+      // Assuming 2 pages max as per requirement
+      // Page 0: 0%, Page 1: 50% (since bar width is 50%)
+      bar.style.transform = `translateX(${index * 100}%)`;
+    }
+  };
 
-    // Update on scroll
-    container.addEventListener("scroll", () => {
-      requestAnimationFrame(updateBar);
-    });
+  // Initialize Bar
+  if (bar) {
+    bar.style.width = "50%";
+    bar.style.transition = "transform 0.4s ease";
+    bar.style.backgroundColor = "#000";
+  }
 
-    // Update on resize
-    window.addEventListener("resize", updateBar);
-
-    // Also update when images load
-    container.querySelectorAll("img").forEach((img) => {
-      img.addEventListener("load", updateBar);
+  // Dot Click Events
+  if (dots.length > 0) {
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => goToPage(index));
     });
   }
-});
 
+  // Bar Click Events
+  if (barTracker) {
+    barTracker.addEventListener("click", (e) => {
+      const rect = barTracker.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+
+      // Left half -> Page 0, Right half -> Page 1
+      if (clickX < width / 2) {
+        goToPage(0);
+      } else {
+        goToPage(1);
+      }
+    });
+  }
+}
+
+/*
 // ---- Slider Pagination (Event 2 Mobile) ----
 const sliderPagination = document.querySelector(".slider-pagination");
 if (sliderPagination) {
-  // Find the slider wrapper in the same section
   const section = sliderPagination.closest(".event-section");
   const container = section
     ? section.querySelector(".product-slider-wrapper")
@@ -145,19 +176,21 @@ if (sliderPagination) {
   if (container && dots.length > 0) {
     const updateDots = () => {
       const { scrollLeft, clientWidth } = container;
-      // Calculate current page index (0 or 1)
       const index = Math.round(scrollLeft / clientWidth);
 
       dots.forEach((dot, i) => {
-        dot.classList.toggle("is-active", i === index);
+        const isActive = i === index;
+        dot.classList.toggle("is-active", isActive);
+        dot.style.backgroundColor = isActive ? "#000" : "";
       });
     };
+
+    updateDots();
 
     container.addEventListener("scroll", () => {
       requestAnimationFrame(updateDots);
     });
 
-    // Click on dot to scroll
     dots.forEach((dot, i) => {
       dot.addEventListener("click", () => {
         container.scrollTo({
@@ -168,6 +201,7 @@ if (sliderPagination) {
     });
   }
 }
+*/
 
 // Language toggle
 const langBtn = document.querySelector(".topbar__lang");
