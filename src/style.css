@@ -1697,7 +1697,7 @@ body {
 
   /* 캐러셀 컨테이너 패딩 조정 (화살표 공간 제거) */
   .brand-carousel {
-    padding: 0 0 40px 0;
+    padding: 0;
     display: block;
   }
 
