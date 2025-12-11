@@ -80,6 +80,7 @@ img {
   width: 100%;
   max-width: 1356px; /* 섹션 안 실제 내용 폭 */
   margin: 0 auto; /* 가운데 정렬 */
+  padding-inline: clamp(12px, 4vw, 24px);
 }
 
 .site-header {
@@ -300,6 +301,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .hd-header__menu {
@@ -318,6 +320,8 @@ img {
   justify-content: center;
   width: 100%;
   max-width: 560px; /* 필요하면 400~560 정도로 조절 */
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .search {
@@ -390,6 +394,7 @@ img {
   display: flex;
   align-items: center;
   justify-self: end;
+  flex-shrink: 0;
 }
 
 /* right side buttons: 46x46, icons centered */
@@ -658,8 +663,9 @@ img {
 }
 
 .hero__image {
-  width: 804px;
-  height: 512px;
+  width: 100%;
+  max-width: 804px;
+  aspect-ratio: 804 / 512;
   border-radius: 24px;
   overflow: hidden;
   background: linear-gradient(90deg, #80a6cf 0%, #85aace 100%);
@@ -1526,7 +1532,8 @@ img {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  width: 804px;
+  width: 100%;
+  max-width: 804px;
   margin: 32px auto 0;
 }
 
@@ -1641,8 +1648,7 @@ body {
   /* Container Padding - Consolidated for all main sections */
   .container,
   .brand-container,
-  .mobile-wrapper,
-  .hero {
+  .mobile-wrapper {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -1958,7 +1964,7 @@ body {
   }
 
   .hero {
-    padding: 40px 20px 0; /* ← 양옆 20px 여백 여기서 줌 */
+    padding: 40px 0 0;
   }
 
   .hero-top {
