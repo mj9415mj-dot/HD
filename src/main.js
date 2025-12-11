@@ -289,3 +289,47 @@ if (langBtn) {
   // 초기화
   update();
 })();
+
+// ---- Event 3 Product Gallery ----
+(() => {
+  const event3Section = document.querySelector(
+    '.event-section[aria-labelledby="event3-title"]'
+  );
+  if (!event3Section) return;
+
+  const mainImage = event3Section.querySelector(
+    ".product-feature__thumb > img"
+  );
+  const dots = event3Section.querySelectorAll(
+    ".product-feature__pagination .dot"
+  );
+  const thumbs = event3Section.querySelectorAll(".composition-thumb");
+
+  // 이미지 경로 설정
+  const imageUrls = [
+    "public/images/products/event3/e3_sun.png",
+    "public/images/products/event2/e2_neo.png",
+  ];
+
+  const setGalleryImage = (index) => {
+    if (!imageUrls[index]) return;
+
+    // 메인 이미지 변경
+    mainImage.src = imageUrls[index];
+
+    // 도트 활성화 처리
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("is-active", i === index);
+    });
+  };
+
+  // 도트 클릭 이벤트
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => setGalleryImage(index));
+  });
+
+  // 썸네일 클릭 이벤트
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => setGalleryImage(index));
+  });
+})();

@@ -1239,6 +1239,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .composition-thumb:first-child {
   border-radius: 4px 0 0 4px;
@@ -1530,6 +1531,7 @@ img {
   background-color: #e5e5e5;
   margin: 40px auto 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .scroll-tracker__bar {
