@@ -792,40 +792,25 @@ img {
   padding: 0 72px 48px; /* 좌우 화살표 공간 + 아래 인디케이터 여백 */
 }
 
-/* 브랜드 카드 리스트 */
-.brand-carousel__list {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding: 4px 4px 20px;
-  scroll-behavior: smooth;
-  list-style: none;
-  margin: 0 auto;
+/* 뷰포트 (overflow hidden) */
+.brand-viewport {
+  overflow: hidden;
   width: 100%;
-  max-width: 1048px; /* 6개 아이템 (160*6 + 16*5) + 좌우패딩 8 */
+  max-width: 1048px;
+  margin: 0 auto;
 }
 
-/* 스크롤바 숨기기 */
-.brand-carousel__list::-webkit-scrollbar {
-  height: 0;
-  width: 0;
+/* 브랜드 카드 리스트 (트랙) */
+.brand-carousel__list {
+  list-style: none;
+  margin: 0;
+  padding: 4px 4px 20px;
 }
 
-/* 하단 중앙 라인 */
-/* 중앙 인디케이터 바: 연한 전체 라인 + 가운데 진한 라인 */
-/* .brand-carousel::before, .brand-carousel::after 제거 (JS Scroll Tracker로 대체) */
-.brand-carousel::before {
-  display: none;
-}
-
-.brand-carousel::after {
-  display: none;
-}
-
-/* 스크롤바 숨김 (웹킷 계열) */
-.brand-carousel__list::-webkit-scrollbar {
-  height: 0;
-  width: 0;
+.brand-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s ease;
 }
 
 /* 개별 카드 */
@@ -920,25 +905,24 @@ img {
   top: 84px; /* list padding-top 4px + thumb half height 80px */
   transform: translateY(-50%);
   z-index: 10;
+  background: transparent;
+}
+
+/* 버튼 */
+.btn-prev,
+.btn-next {
+  color: #1b1e23;
+}
+
+.btn-prev[aria-disabled="true"],
+.btn-next[aria-disabled="true"] {
+  color: #d6d8df;
+  pointer-events: none;
 }
 
 /* 왼쪽 / 오른쪽 위치 */
 .brand-carousel__control--prev {
   left: 24px;
-  /* SVG/icon color */
-  color: #d6d8df; /* for inline SVG using currentColor */
-  background: transparent;
-}
-
-.brand-carousel__control--prev svg {
-  fill: currentColor;
-  stroke: currentColor;
-}
-
-/* If the arrow is an <img src="...svg">, tint via filter */
-.brand-carousel__control--prev img {
-  filter: invert(90%) sepia(3%) saturate(300%) hue-rotate(183deg)
-    brightness(98%) contrast(88%);
 }
 
 .brand-carousel__control--next {
@@ -947,6 +931,27 @@ img {
 
 .brand-carousel__control--prev img {
   transform: rotate(180deg);
+}
+
+/* SVG 색상 필터 */
+.btn-prev img {
+  filter: invert(8%) sepia(7%) saturate(1447%) hue-rotate(178deg)
+    brightness(95%) contrast(92%);
+}
+
+.btn-prev[aria-disabled="true"] img {
+  filter: invert(90%) sepia(3%) saturate(300%) hue-rotate(183deg)
+    brightness(98%) contrast(88%);
+}
+
+.btn-next img {
+  filter: invert(8%) sepia(7%) saturate(1447%) hue-rotate(178deg)
+    brightness(95%) contrast(92%);
+}
+
+.btn-next[aria-disabled="true"] img {
+  filter: invert(90%) sepia(3%) saturate(300%) hue-rotate(183deg)
+    brightness(98%) contrast(88%);
 }
 
 /* product grid */

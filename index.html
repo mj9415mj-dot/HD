@@ -261,14 +261,15 @@
 
               <div class="brand-carousel">
                 <button
-                  class="brand-carousel__control brand-carousel__control--prev"
+                  class="brand-carousel__control brand-carousel__control--prev btn-prev"
                   type="button"
                   aria-label="이전 브랜드 보기"
                 >
                   <img src="public/svg/icon_arrow.svg" alt="이전" />
                 </button>
 
-                <ul class="brand-carousel__list">
+                <div class="brand-viewport">
+                  <ul class="brand-carousel__list brand-track">
                   <li class="brand-card">
                     <a href="#">
                       <div class="brand-card__thumb">
@@ -438,10 +439,11 @@
                     <span class="brand-card__name">솔가</span>
                   </li>
                
-                </ul>
+                  </ul>
+                </div>
 
                 <button
-                  class="brand-carousel__control brand-carousel__control--next"
+                  class="brand-carousel__control brand-carousel__control--next btn-next"
                   type="button"
                   aria-label="다음 브랜드 보기"
                 >

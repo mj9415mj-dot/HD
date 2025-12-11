@@ -138,3 +138,82 @@ if (langBtn) {
     langBtn.classList.toggle("is-active");
   });
 }
+
+// ---- Brand Carousel (Page-based Navigation) ----
+(() => {
+  const root = document.querySelector(".brand-carousel");
+  if (!root) return;
+
+  const viewport = root.querySelector(".brand-viewport");
+  const track = root.querySelector(".brand-track");
+  const prevBtn = root.querySelector(".btn-prev");
+  const nextBtn = root.querySelector(".btn-next");
+  const tracker = root.querySelector(".scroll-tracker");
+  const bar = tracker ? tracker.querySelector(".scroll-tracker__bar") : null;
+  if (!viewport || !track || !prevBtn || !nextBtn || !tracker || !bar) return;
+
+  let index = 0; // 현재 페이지
+
+  const getPageCount = () => {
+    const vp = viewport.clientWidth || 0;
+    if (!vp) return 0;
+    // 트랙 전체 스크롤폭 기준으로 페이지 수 계산
+    return Math.max(0, Math.ceil(track.scrollWidth / vp) - 1);
+  };
+
+  const updateBar = () => {
+    const max = getPageCount();
+    if (max <= 0) {
+      bar.style.width = "100%";
+      bar.style.transform = "translateX(0)";
+      return;
+    }
+
+    // 바의 너비: 전체를 페이지 수로 나눈 비율
+    const barWidthPercent = 100 / (max + 1);
+    // 바의 위치: 현재 페이지 비율
+    const barPositionPercent = (index / (max + 1)) * 100;
+
+    bar.style.width = `${barWidthPercent}%`;
+    bar.style.transform = `translateX(${index * 100}%)`;
+  };
+
+  const updateButtons = (max) => {
+    const atStart = index === 0;
+    const atEnd = index === max;
+    prevBtn.setAttribute("aria-disabled", String(atStart));
+    nextBtn.setAttribute("aria-disabled", String(atEnd));
+    prevBtn.style.color = atStart ? "#d6d8df" : "#1b1e23";
+    nextBtn.style.color = atEnd ? "#d6d8df" : "#1b1e23";
+  };
+
+  const update = () => {
+    const vp = viewport.clientWidth || 0;
+    let max = getPageCount();
+    if (index < 0) index = 0;
+    if (index > max) index = max;
+
+    track.style.transform = `translateX(-${index * vp}px)`;
+    updateButtons(max);
+    updateBar();
+  };
+
+  const go = (step) => {
+    index += step;
+    update();
+  };
+
+  prevBtn.addEventListener("click", () => go(-1));
+  nextBtn.addEventListener("click", () => go(1));
+
+  const onResize = () => {
+    // index는 유지하되, 범위 벗어나면 보정
+    const max = getPageCount();
+    if (index > max) index = max;
+    update();
+  };
+  window.addEventListener("resize", onResize, { passive: true });
+
+  // 초기화
+  update();
+})();
