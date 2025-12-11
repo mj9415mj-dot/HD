@@ -1,16 +1,16 @@
 // ---- 장바구니 카운터 ----
 let cartCount = 0;
-const cartBadge = document.querySelector(".cart-badge");
+const cartBadges = document.querySelectorAll(".cart-badge");
 
 const updateCartBadge = () => {
-  if (cartBadge) {
+  cartBadges.forEach((badge) => {
     if (cartCount > 0) {
-      cartBadge.textContent = cartCount;
-      cartBadge.style.display = "flex";
+      badge.textContent = cartCount;
+      badge.style.display = "flex";
     } else {
-      cartBadge.style.display = "none";
+      badge.style.display = "none";
     }
-  }
+  });
 };
 
 // ---- 장바구니 / CTA 버튼 토스트 알림 ----
