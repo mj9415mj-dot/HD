@@ -333,3 +333,14 @@ if (langBtn) {
     thumb.addEventListener("click", () => setGalleryImage(index));
   });
 })();
+
+// ---- Fixed Header Padding Adjustment ----
+const adjustBodyPadding = () => {
+  const header = document.querySelector(".site-header");
+  if (header) {
+    document.body.style.paddingTop = `${header.offsetHeight}px`;
+  }
+};
+
+window.addEventListener("load", adjustBodyPadding);
+window.addEventListener("resize", adjustBodyPadding);
