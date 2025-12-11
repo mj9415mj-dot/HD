@@ -36,7 +36,7 @@ if (featureCartBtn) {
   featureCartBtn.addEventListener("click", () => {
     cartCount++;
     updateCartBadge();
-    showToast("선크림 세트가 장바구니에 담겼어요 😊");
+    showToast("장바구니에 담겼습니다 :)");
   });
 }
 
@@ -46,7 +46,7 @@ if (event3CartBtn) {
   event3CartBtn.addEventListener("click", () => {
     cartCount++;
     updateCartBadge();
-    showToast("선크림 세트가 장바구니에 담겼어요 😊");
+    showToast("장바구니에 담겼습니다 :)");
   });
 }
 

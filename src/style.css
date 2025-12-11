@@ -494,11 +494,11 @@ img {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 28px;
-  background: rgba(0, 0, 0, 0.85);
+  top: 100px;
+  background: #666f7e;
   color: #fff;
-  padding: 10px 16px;
-  border-radius: 12px;
+  padding: 10px 20px;
+  border-radius: 20px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
@@ -1506,26 +1506,7 @@ img {
   display: block;
 }
 
-/* micro interaction : toast */
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  transform: translateX(-50%) translateY(16px);
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: rgba(27, 30, 35, 0.9);
-  color: #fff;
-  font-size: 13px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-  z-index: 999;
-}
-.toast--visible {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+/* micro interaction : toast removed (duplicate) */
 
 /* 버튼/카드 hover 마이크로 액션 */
 .btn-primary,
