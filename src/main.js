@@ -3,6 +3,7 @@ let cartCount = 0;
 const cartBadges = document.querySelectorAll(".cart-badge");
 
 const updateCartBadge = () => {
+  // 장바구니 배지 숫자와 표시 여부를 업데이트합니다.
   cartBadges.forEach((badge) => {
     if (cartCount > 0) {
       badge.textContent = cartCount;
@@ -18,6 +19,7 @@ const featureCartBtn = document.querySelector(".product-feature .btn-primary");
 const ctaBtn = document.querySelector(".cta__button");
 
 const showToast = (message) => {
+  // 토스트 메시지를 생성하고 화면에 표시합니다.
   let toast = document.querySelector(".toast");
   if (!toast) {
     toast = document.createElement("div");
@@ -110,7 +112,7 @@ if (event2Section) {
     : null;
 
   const goToPage = (index) => {
-    // Slide track
+    // Event 2 슬라이더의 페이지를 이동시키고 인디케이터를 업데이트합니다.
     if (track) {
       track.style.transform = `translateX(-${index * 100}%)`;
     }
@@ -227,6 +229,7 @@ if (langBtn) {
   let index = 0; // 현재 페이지
 
   const getPageCount = () => {
+    // 현재 뷰포트 너비를 기준으로 전체 페이지 수를 계산합니다.
     const vp = viewport.clientWidth || 0;
     if (!vp) return 0;
     // 트랙 전체 스크롤폭 기준으로 페이지 수 계산
@@ -234,6 +237,7 @@ if (langBtn) {
   };
 
   const updateBar = () => {
+    // 스크롤 트래커 바의 너비와 위치를 업데이트합니다.
     const max = getPageCount();
     if (max <= 0) {
       bar.style.width = "100%";
@@ -251,6 +255,7 @@ if (langBtn) {
   };
 
   const updateButtons = (max) => {
+    // 이전/다음 버튼의 활성화 상태를 업데이트합니다.
     const atStart = index === 0;
     const atEnd = index === max;
     prevBtn.setAttribute("aria-disabled", String(atStart));
@@ -260,6 +265,7 @@ if (langBtn) {
   };
 
   const update = () => {
+    // 캐러셀의 위치와 UI 상태를 전반적으로 업데이트합니다.
     const vp = viewport.clientWidth || 0;
     let max = getPageCount();
     if (index < 0) index = 0;
@@ -271,6 +277,7 @@ if (langBtn) {
   };
 
   const go = (step) => {
+    // 지정된 단계만큼 페이지를 이동합니다.
     index += step;
     update();
   };
@@ -279,6 +286,7 @@ if (langBtn) {
   nextBtn.addEventListener("click", () => go(1));
 
   const onResize = () => {
+    // 창 크기 변경 시 캐러셀 상태를 재계산합니다.
     // index는 유지하되, 범위 벗어나면 보정
     const max = getPageCount();
     if (index > max) index = max;
@@ -312,6 +320,7 @@ if (langBtn) {
   ];
 
   const setGalleryImage = (index) => {
+    // 선택된 인덱스의 이미지로 갤러리를 업데이트합니다.
     if (!imageUrls[index]) return;
 
     // 메인 이미지 변경
@@ -336,6 +345,7 @@ if (langBtn) {
 
 // ---- Fixed Header Padding Adjustment ----
 const adjustBodyPadding = () => {
+  // 헤더 높이에 맞춰 본문 상단 여백을 조정합니다.
   const header = document.querySelector(".site-header");
   if (header) {
     document.body.style.paddingTop = `${header.offsetHeight}px`;

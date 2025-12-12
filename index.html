@@ -220,11 +220,15 @@
           <div class="hero-tabs-container">
             <div class="container">
               <!-- 상단 탭 -->
-              <nav class="hero-tabs" aria-label="기획전 탭">
+              <nav class="hero-tabs" aria-label="기획전 탭" role="tablist">
                 <button
                   class="hero-tabs__btn is-active"
                   type="button"
                   data-target="panel-event"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="panel-event"
+                  id="tab-event"
                   >
                   행사
                 </button>
@@ -232,6 +236,10 @@
                 class="hero-tabs__btn"
                 type="button"
                 data-target="panel-recommend"
+                role="tab"
+                aria-selected="false"
+                aria-controls="panel-recommend"
+                id="tab-recommend"
                 >
                 추천상품
               </button>
@@ -239,6 +247,10 @@
               class="hero-tabs__btn"
               type="button"
               data-target="panel-all"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-all"
+              id="tab-all"
               >
               전체상품
             </button>

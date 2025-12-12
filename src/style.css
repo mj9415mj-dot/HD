@@ -500,7 +500,7 @@ img {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 100px;
+  top: 120px;
   background: #666f7e;
   color: #fff;
   padding: 10px 20px;
@@ -2137,4 +2137,25 @@ body {
   .btn-cart-icon:hover::before {
     background-position: 0 -22px;
   }
+}
+
+/* Common Card Definitions */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--product {
+  border-radius: 10px;
+}
+
+.card--brand {
+  text-align: center;
+}
+
+.card--feature {
+  border-radius: 12px;
+  background-color: #f6f7fb;
+  overflow: hidden;
 }
