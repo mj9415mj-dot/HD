@@ -732,6 +732,10 @@ img {
   color: #abb2be;
 }
 
+.hero-tabs__btn:hover {
+  color: #1b1e23;
+}
+
 .hero-tabs__btn.is-active {
   color: var(--color-primary);
   color: #1b1e23;
