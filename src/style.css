@@ -827,7 +827,7 @@ img {
 .brand-viewport {
   overflow: hidden;
   width: 100%;
-  max-width: 1048px;
+  max-width: 1088px;
   margin: 0 auto;
 }
 
@@ -1541,6 +1541,9 @@ img {
   background-color: #e5e5e5;
   margin: 40px auto 0;
   overflow: hidden;
+}
+
+.scroll-tracker__bar_event2 {
   cursor: pointer;
 }
 
