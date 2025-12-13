@@ -338,8 +338,8 @@ if (breadcrumbToggle) {
   const thumbs = event3Section.querySelectorAll(".composition-thumb");
 
   const imageUrls = [
-    "public/images/variants/a/products/event03/e3-sun.png",
-    "public/images/variants/a/products/event03/e3-neo.png",
+    "./public/images/variants/a/products/event03/e3-sun.png",
+    "./public/images/variants/a/products/event03/e3-neo.png",
   ];
 
   const setGalleryImage = (index) => {
