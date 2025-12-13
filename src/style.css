@@ -358,7 +358,7 @@ button:focus-visible {
 }
 
 .hd-header__cart::before {
-  background-image: url("../public/svg/icon_gnb_cart.svg");
+  background-image: url("../public/svg/icon-gnb-cart.svg");
   background-position: 0 0;
 }
 .hd-header__cart:hover::before,
@@ -367,7 +367,7 @@ button:focus-visible {
 }
 
 .hd-header__profile::before {
-  background-image: url("../public/svg/icon_gnb_my.svg");
+  background-image: url("../public/svg/icon-gnb-my.svg");
   background-position: 0 0;
 }
 .hd-header__profile:hover::before,
@@ -538,7 +538,7 @@ button:focus-visible {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: clamp(260px, 20vw, 360px);
+  height: clamp(200px, 30vw, 330px);
   background-color: #ffffff;
   z-index: -1;
 }
@@ -1053,7 +1053,7 @@ button:focus-visible {
   display: block;
   width: 25px;
   height: 25px;
-  background-image: url("../public/svg/icon_gnb_cart.svg");
+  background-image: url("../public/svg/icon-gnb-cart.svg");
   background-size: 25px;
   background-position: 0 0;
   filter: invert(1) brightness(2);
@@ -1233,7 +1233,7 @@ button:focus-visible {
   display: block;
   width: 12px;
   height: 12px;
-  background-image: url("../public/svg/icom_product_box.svg");
+  background-image: url("../public/svg/icom-product-box.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -1333,7 +1333,7 @@ button:focus-visible {
   display: block;
   width: 18px;
   height: 18px;
-  background-image: url("../public/svg/icon_gnb_cart.svg");
+  background-image: url("../public/svg/icon-gnb-cart.svg");
   background-size: 18px 36px;
   background-position: 0 0;
   filter: invert(1) brightness(2);
@@ -1598,7 +1598,7 @@ button:focus-visible {
     display: block;
     width: 24px;
     height: 24px;
-    background-image: url("../public/svg/icon_gnb_cart.svg");
+    background-image: url("../public/svg/icon-gnb-cart.svg");
     background-size: 24px 48px;
     background-position: 0 0;
   }
@@ -1625,6 +1625,11 @@ button:focus-visible {
 
   .hero {
     padding: 40px 0 0;
+  }
+  
+  .hero-tabs-container {
+    border-bottom: 2px solid #eef0f2;
+
   }
 
   .hero-container_box {
@@ -1674,20 +1679,8 @@ button:focus-visible {
   }
 
   /* Tabs (Mobile) */
-  .hero-tabs-container {
-    background-color: #fff;
-    border-radius: 20px 20px 0 0;
-    margin-top: -20px;
-    position: relative;
-    z-index: 1;
-    padding-top: 16px;
-    height: 56px;
-    top: auto;
-  }
-
   .hero-tabs {
     justify-content: space-around;
-    border-bottom: 1px solid #eef0f2;
     padding: 0 20px;
   }
 
