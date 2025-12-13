@@ -15,9 +15,6 @@ const updateCartBadge = () => {
 };
 
 // ---- 장바구니 / CTA 버튼 토스트 알림 ----
-const featureCartBtn = document.querySelector(".product-feature .btn-primary");
-const ctaBtn = document.querySelector(".cta__button");
-
 const showToast = (message) => {
   // 토스트 메시지를 생성하고 화면에 표시합니다.
   let toast = document.querySelector(".toast");
@@ -34,14 +31,6 @@ const showToast = (message) => {
   }, 2000);
 };
 
-if (featureCartBtn) {
-  featureCartBtn.addEventListener("click", () => {
-    cartCount++;
-    updateCartBadge();
-    showToast("장바구니에 담겼습니다 :)");
-  });
-}
-
 // ---- Event 3 장바구니 버튼 (추가) ----
 const event3CartBtn = document.querySelector(".btn-cart-icon");
 if (event3CartBtn) {
@@ -49,12 +38,6 @@ if (event3CartBtn) {
     cartCount++;
     updateCartBadge();
     showToast("장바구니에 담겼습니다 :)");
-  });
-}
-
-if (ctaBtn) {
-  ctaBtn.addEventListener("click", () => {
-    showToast("다른 기획전도 준비 중입니다.");
   });
 }
 
@@ -164,46 +147,6 @@ if (event2Section) {
     });
   }
 }
-
-/*
-// ---- Slider Pagination (Event 2 Mobile) ----
-const sliderPagination = document.querySelector(".slider-pagination");
-if (sliderPagination) {
-  const section = sliderPagination.closest(".event-section");
-  const container = section
-    ? section.querySelector(".product-slider-wrapper")
-    : null;
-  const dots = sliderPagination.querySelectorAll(".dot");
-
-  if (container && dots.length > 0) {
-    const updateDots = () => {
-      const { scrollLeft, clientWidth } = container;
-      const index = Math.round(scrollLeft / clientWidth);
-
-      dots.forEach((dot, i) => {
-        const isActive = i === index;
-        dot.classList.toggle("is-active", isActive);
-        dot.style.backgroundColor = isActive ? "#000" : "";
-      });
-    };
-
-    updateDots();
-
-    container.addEventListener("scroll", () => {
-      requestAnimationFrame(updateDots);
-    });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        container.scrollTo({
-          left: i * container.clientWidth,
-          behavior: "smooth",
-        });
-      });
-    });
-  }
-}
-*/
 
 // Language toggle
 const langBtn = document.querySelector(".topbar__lang");
