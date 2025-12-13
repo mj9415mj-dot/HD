@@ -1,0 +1,140 @@
+const VARIANTS = {
+  a: {
+    hero: {
+      date: "2024.07.29 · 재고소진시까지",
+      title: "라네즈 외 7개 브랜드<br />햇살 가림 상품 기획전",
+      subtitle: "전 구매 고객 대상 7개 브랜드 상품 할인!",
+      image: "public/images/variants/a/hero/hero-main.png",
+      alt: "라네즈 외 7개 브랜드 햇살 가림 상품 기획전"
+    },
+    events: [
+      {
+        type: "brand-carousel",
+        badge: "Event 1",
+        title: "라네즈 외 7개 브랜드<br />40% 할인",
+        desc: "7개 브랜드의 SUN 제품을 40% 할인가에 만나보세요!",
+        data: [
+          { name: "라네즈", logo: "public/images/brands/logo/logo-laneige.png", bg: "public/images/brands/card/brand-laneige.png" },
+          { name: "오쏘몰", logo: "public/images/brands/logo/logo-orthomol.png", bg: "public/images/brands/card/brand-orthomol.png" },
+          { name: "센트룸", logo: "public/images/brands/logo/logo-centorum.png", bg: "public/images/brands/card/brand-centorum.png" },
+          { name: "온누리스토어", logo: "public/images/brands/logo/logo-onnuristore.png", bg: "public/images/brands/card/brand-onnuristore.png" },
+          { name: "헤어메스", logo: "public/images/brands/logo/logo-hermes.png", bg: "public/images/brands/card/brand-hermes.png" },
+          { name: "종근당건강", logo: "public/images/brands/logo/logo-ckd.png", bg: "public/images/brands/card/brand-ckd.png", className: "is-desktop-only" },
+          { name: "지앤씨(수입)", logo: "public/images/brands/logo/logo-gnc.png", bg: "public/images/brands/card/brand-gnc.png", className: "is-mobile-only" },
+          { name: "솔가", logo: "public/images/brands/logo/logo-solgar.png", bg: "public/images/brands/card/brand-solgar.png" }
+        ]
+      },
+      {
+        type: "product-grid",
+        badge: "Event 2",
+        title: "햇살 가리는 SUN 제품<br />70% 할인",
+        desc: "7개 브랜드의 SUN 제품을 70% 할인가에 만나보세요!",
+        data: [
+          { name: "라네즈 네오 에센셜 블러링 피니시 파우더 (싱글)", img: "public/images/variants/a/products/event02/e2-neo.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 크림스킨 170ML", img: "public/images/variants/a/products/event02/e2-cream.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림", img: "public/images/variants/a/products/event02/e2-waterbank.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 래디언씨 더블 액티브 브라이트닝 에센스", img: "public/images/variants/a/products/event02/e2-retinol.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 워터슬리핑마스크 EX 70ml", img: "public/images/variants/a/products/event02/e2-sleeping.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 스킨베일베이스 EX_40호 듀오 세트", img: "public/images/variants/a/products/event02/e2-skinveil.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 네오 에센셜 블러링 피니시 파우더 (싱글)", img: "public/images/variants/a/products/event02/e2-neo.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 크림스킨 170ML", img: "public/images/variants/a/products/event02/e2-cream.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 워터뱅크 블루 히알루로닉 모이스춰 크림", img: "public/images/variants/a/products/event02/e2-waterbank.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 래디언씨 더블 액티브 브라이트닝 에센스", img: "public/images/variants/a/products/event02/e2-retinol.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 워터슬리핑마스크 EX 70ml", img: "public/images/variants/a/products/event02/e2-sleeping.png", rate: "70%", current: "$11.7", original: "$39" },
+          { name: "라네즈 스킨베일베이스 EX_40호 듀오 세트", img: "public/images/variants/a/products/event02/e2-skinveil.png", rate: "70%", current: "$11.7", original: "$39" }
+        ]
+      },
+      {
+        type: "product-feature",
+        badge: "Event 3",
+        title: "해를 가려라, SUN 제품<br />세트상품 10% 할인",
+        desc: "라네즈 래디언씨 선크림 SPF50+/PA++++ 50ml + 네오 에센셜 블러링 피니시 파우더(싱글)",
+        descMobile: "종아리 마사지기 V3 지퍼 벨크로형 + 무선 목어깨 마사지기",
+        mainImage: "public/images/variants/a/products/event03/e3-sun.png",
+        composition: [
+          { src: "public/images/variants/a/products/event03/e3-sun.png", alt: "라네즈 래디언씨 선크림" },
+          { src: "public/images/variants/a/products/event03/e3-neo.png", alt: "네오 에센셜 블러링 피니시 파우더" }
+        ],
+        price: {
+          original: "$68",
+          final: "$62.64",
+          rate: "10%"
+        }
+      }
+    ],
+    brands: [
+      { name: "라네즈", logo: "public/images/brands/logo/logo-laneige.png", bg: "public/images/brands/card/brand-laneige.png" },
+      { name: "오쏘몰", logo: "public/images/brands/logo/logo-orthomol.png", bg: "public/images/brands/card/brand-orthomol.png" },
+      { name: "센트룸", logo: "public/images/brands/logo/logo-centorum.png", bg: "public/images/brands/card/brand-centorum.png" },
+      { name: "온누리스토어", logo: "public/images/brands/logo/logo-onnuristore.png", bg: "public/images/brands/card/brand-onnuristore.png" },
+      { name: "헤어메스", logo: "public/images/brands/logo/logo-hermes.png", bg: "public/images/brands/card/brand-hermes.png" },
+      { name: "헤어메스", logo: "public/images/brands/logo/logo-hermes.png", bg: "public/images/brands/card/brand-hermes.png", className: "is-desktop-only" },
+      { name: "지앤씨(수입)", logo: "public/images/brands/logo/logo-gnc.png", bg: "public/images/brands/card/brand-gnc.png", className: "is-mobile-only" },
+      { name: "종근당건강", logo: "public/images/brands/logo/logo-ckd.png", bg: "public/images/brands/card/brand-ckd.png", className: "is-desktop-only" },
+      { name: "솔가", logo: "public/images/brands/logo/logo-solgar.png", bg: "public/images/brands/card/brand-solgar.png", className: "is-mobile-only" }
+    ]
+  },
+  b: {
+    hero: {
+      date: "2024.07.29 · 재고소진시까지",
+      title: "풀리오 최강 마사지 조합",
+      subtitle: "세트로 구매하면 더 싸다!<br>같이 구매하면 36% 할인",
+      image: "public/images/variants/b/hero/hero-main.png",
+      alt: "풀리오 최강 마사지 조합"
+    },
+    events: [
+      {
+        type: "main-title",
+        title: "같이 구매하면 36% 할인!",
+        desc: "종아리 마사지기 V2(지퍼 벨크로 이중형 24년형/2.6L)<br />종아리 마사지기 V3(지퍼 벨크로형)"
+      },
+      {
+        type: "product-feature",
+        badge: "Event 1",
+        title: "풀리오 세트 A",
+        desc: "종아리 마사지기 V2(지퍼 벨크로 이중형) 24년형/2.6리터 + 무선 목어깨 마사지기",
+        mainImage: "public/images/variants/b/products/event01/e1-pulio-1.png",
+        composition: [
+          { src: "public/images/variants/b/products/event01/e1-pulio-1.png", alt: "풀리오 세트 A 메인" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-1.png", alt: "구성품 1" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-1.png", alt: "구성품 2" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-3.png", alt: "구성품 4" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-2.png", alt: "구성품 5" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-3.png", alt: "구성품 6" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-1.png", alt: "구성품 7" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-2.png", alt: "구성품 8" },
+          { src: "public/images/variants/b/products/event01/e1-pulio-3.png", alt: "구성품 9" }
+        ],
+        price: {
+          original: "$176",
+          final: "$112.64",
+          rate: "36%"
+        }
+      },
+      {
+        type: "product-feature",
+        badge: "Event 2",
+        title: "풀리오 세트 B",
+        desc: "종아리 마사지기 V3 지퍼 벨크로형 + 무선 목어깨 마사지기",
+        mainImage: "public/images/variants/b/products/event02/e2-pulio-2.png",
+        composition: [
+          { src: "public/images/variants/b/products/event02/e2-pulio-2.png", alt: "풀리오 세트 B 메인" },
+          { src: "public/images/variants/b/products/event02/e2-pulio-1.png", alt: "구성품 1" }
+        ],
+        price: {
+          original: "$176",
+          final: "$112.64",
+          rate: "36%"
+        }
+      }
+    ],
+    brands: [
+      { name: "온누리스토어", logo: "public/images/brands/logo/logo-onnuristore.png", bg: "public/images/brands/card/brand-onnuristore.png", className: "is-desktop-only" },
+      { name: "헤어메스", logo: "public/images/brands/logo/logo-hermes.png", bg: "public/images/brands/card/brand-hermes.png", className: "is-desktop-only" },
+      { name: "풀리오", logo: "public/images/brands/logo/logo-pulio.png", bg: "public/images/brands/card/brand-pulio.png", className: "is-mobile-only" },
+      { name: "오쏘몰", logo: "public/images/brands/logo/logo-orthomol.png", bg: "public/images/brands/card/brand-orthomol.png", className: "is-mobile-only" }
+    ]
+  }
+};
+
+export default VARIANTS;
