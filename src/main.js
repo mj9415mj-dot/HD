@@ -1,17 +1,16 @@
+// URL 파라미터(v)로 A/B 기획전을 구분하고, 동일한 구조에 데이터를 주입해 렌더링한다.
 import VARIANTS from './data.js';
 
-// 1. Determine Variant
 const urlParams = new URLSearchParams(window.location.search);
-const variantKey = urlParams.get('v') || 'a'; // Default to 'a'
+const variantKey = urlParams.get('v') || 'a';
 const data = VARIANTS[variantKey] || VARIANTS['a'];
 
-// Apply variant specific styles
 if (variantKey === 'b') {
   document.documentElement.style.setProperty('--color-hero-bg', '#D6CEEB');
   document.documentElement.style.setProperty('--color-hero-bg-title', '#7F519C');
 }
 
-// 2. Render Functions
+// 렌더링(마크업 생성)
 const renderHero = (heroData) => {
   const heroSection = document.querySelector('.hero');
   if (!heroSection) return;
@@ -78,7 +77,7 @@ const renderBrandCarousel = (eventData) => {
 };
 
 const renderProductGrid = (eventData) => {
-  // Split data into chunks of 6 for pages
+  // 페이지네이션 처리를 위해 6개 단위로 데이터 분할(PC 기준 2행 구성)
   const chunkSize = 6;
   const pages = [];
   for (let i = 0; i < eventData.data.length; i += chunkSize) {
@@ -142,10 +141,9 @@ const renderProductGrid = (eventData) => {
 const renderProductFeature = (eventData) => {
   const maxVisibleThumbs = 4;
   const totalItems = eventData.composition.length;
-  const remainingCount = 9;
+  const remainingCount = 9;  // 시안 기준(+N 표기)
 
   const compositionThumbs = eventData.composition.map((item, i) => {
-    // Logic for the 4th item (index 3) when there are more items
     if (i === maxVisibleThumbs - 1 && remainingCount > 0) {
       return `
         <button type="button" class="composition-thumb more-thumb" aria-label="더보기" data-remaining="+${remainingCount}">
@@ -157,7 +155,6 @@ const renderProductFeature = (eventData) => {
       `;
     }
     
-    // Logic for items beyond the 4th (initially hidden)
     if (i >= maxVisibleThumbs) {
       return `
         <button type="button" class="composition-thumb is-hidden" aria-label="구성품 ${i + 1}" style="display: none;">
@@ -166,7 +163,6 @@ const renderProductFeature = (eventData) => {
       `;
     }
 
-    // Normal items (1st, 2nd, 3rd)
     return `
       <button type="button" class="composition-thumb" aria-label="구성품 ${i + 1}">
         <img src="${item.src}" alt="${item.alt}" />
@@ -275,8 +271,7 @@ const renderEvents = (eventsData) => {
   container.innerHTML = html;
 };
 
-// 3. Interactive Logic (Refactored to Named Functions)
-
+// 인터랙션 초기화(이벤트 바인딩)
 const initCart = () => {
   let cartCount = 0;
   const cartBadges = document.querySelectorAll(".cart-badge");
@@ -308,7 +303,6 @@ const initCart = () => {
     }, 2000);
   };
 
-  // Bind dynamically created buttons
   document.body.addEventListener('click', (e) => {
     if (e.target.closest('.btn-cart-icon') || e.target.closest('.btn-cart-square')) {
       e.preventDefault();
@@ -379,13 +373,11 @@ const initBreadcrumb = () => {
   const breadcrumbDropdown = document.querySelector(".breadcrumb-dropdown");
   const currentBreadcrumb = document.querySelector("#breadcrumb-current");
 
-  // Set current breadcrumb text based on variant
+  
   if (currentBreadcrumb && data.hero.title) {
-    // Remove <br> tags for breadcrumb text
     currentBreadcrumb.textContent = data.hero.title.replace(/<br\s*\/?>/gi, ' ');
   }
 
-  // Highlight current variant in dropdown
   const dropdownLinks = document.querySelectorAll(".breadcrumb-dropdown a");
   dropdownLinks.forEach(link => {
     if (link.dataset.variant === variantKey) {
@@ -538,7 +530,6 @@ const initEvent2Slider = () => {
     nextBtn.addEventListener("click", () => updatePage(currentPage + 1));
   }
 
-  // Initial state
   updatePage(0);
 };
 
@@ -553,18 +544,16 @@ const initBrandCarousel = () => {
     
     if (!track) return;
 
-    const itemWidth = 160 + 24; // card width + gap
+    const itemWidth = 160 + 24;
     const visibleItems = 6;
     const totalItems = track.children.length;
     const maxIndex = Math.max(0, totalItems - visibleItems);
     let currentIndex = 0;
 
     const updateCarousel = () => {
-      // Move track
       const translateX = -(currentIndex * itemWidth);
       track.style.transform = `translateX(${translateX}px)`;
 
-      // Update buttons
       if (prevBtn) {
         prevBtn.setAttribute('aria-disabled', currentIndex === 0);
       }
@@ -572,10 +561,8 @@ const initBrandCarousel = () => {
         nextBtn.setAttribute('aria-disabled', currentIndex >= maxIndex);
       }
 
-      // Update scroll bar
       if (bar) {
         const progress = maxIndex > 0 ? currentIndex / maxIndex : 0;
-        // The bar is 50% width. It can move another 50% (100% translation).
         bar.style.transform = `translateX(${progress * 100}%)`; 
       }
     };
@@ -598,7 +585,6 @@ const initBrandCarousel = () => {
       });
     }
 
-    // Initial update
     updateCarousel();
   });
 };
@@ -611,7 +597,6 @@ const initProductFeature = () => {
     const dots = feature.querySelectorAll('.product-feature__pagination .dot');
     const thumbsContainer = feature.querySelector('.composition-thumbs');
     
-    // Data for images is stored in data-images attribute
     const imagesData = JSON.parse(feature.dataset.images || '[]');
 
     const updateImage = (index) => {
@@ -628,17 +613,12 @@ const initProductFeature = () => {
       dot.addEventListener('click', () => updateImage(index));
     });
 
-    // Delegate click for thumbs to handle dynamic changes
     if (thumbsContainer) {
       thumbsContainer.addEventListener('click', (e) => {
         const thumb = e.target.closest('.composition-thumb');
         if (!thumb) return;
 
-        // If it's the "more" thumb, do nothing (just update image if needed, or prevent default)
         if (thumb.classList.contains('more-thumb')) {
-           // Do nothing or just update image
-           // const index = Array.from(thumbsContainer.children).indexOf(thumb);
-           // updateImage(index);
            return; 
         }
 
@@ -650,12 +630,10 @@ const initProductFeature = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Render Initial Content
   renderHero(data.hero);
   renderBrandGrid(data.brands);
   renderEvents(data.events);
 
-  // 2. Initialize Interactions
   initCart();
   initHeaderInteraction();
   initBreadcrumb();

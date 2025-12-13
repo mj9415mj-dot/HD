@@ -44,14 +44,13 @@ body {
 
 body {
   min-width: 357px;
-  font-family: "Noto Sans CJK KR", "본고딕", "sans-serif", sans-serif;
+  font-family: "Noto Sans CJK KR", "본고딕", sans-serif;
   color: var(--color-primary);
   background-color: var(--color-page-bg);
   letter-spacing: -0.05em;
   font-size: 13px;
 }
 
-/* Screen-reader only */
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -69,7 +68,6 @@ img {
   display: block;
 }
 
-/* Buttons: normalize */
 button {
   margin: 0;
   padding: 0;
@@ -358,7 +356,8 @@ button:focus-visible {
 }
 
 .hd-header__cart::before {
-  background-image: url("../public/svg/icon-gnb-cart.svg");
+background-image: url("../public/svg/icon-gnb-cart.svg");
+
   background-position: 0 0;
 }
 .hd-header__cart:hover::before,
@@ -396,7 +395,6 @@ button:focus-visible {
   letter-spacing: 0;
 }
 
-/* Curation */
 .hd-header__curation {
   width: 46px;
   height: 46px;
@@ -860,7 +858,7 @@ button:focus-visible {
 }
 
 /* Event 3 desc size */
-.event-section[aria-labelledby="event3-title"] .section-head__desc {
+.event-section[aria-labelledby^="event3-title-"] .section-head__desc {
   font-size: 13px;
 }
 
@@ -1107,7 +1105,7 @@ button:focus-visible {
   width: 25px;
   height: 25px;
   background-image: url("../public/svg/icon-gnb-cart.svg");
-  background-size: 25px;
+  background-size: 25px 50px;
   background-position: 0 0;
   filter: invert(1) brightness(2);
 }
@@ -1420,10 +1418,10 @@ button:focus-visible {
 .btn-cart-icon::before {
   content: "";
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   background-image: url("../public/svg/icon-gnb-cart.svg");
-  background-size: 18px 36px;
+  background-size: 22px 44px;
   background-position: 0 0;
   filter: invert(1) brightness(2);
 }
@@ -1433,7 +1431,7 @@ button:focus-visible {
 }
 
 .btn-cart-icon:hover::before {
-  background-position: 0 -18px;
+  background-position: 0 -22px;
   filter: none;
 }
 
@@ -1710,7 +1708,8 @@ button:focus-visible {
     display: block;
     width: 24px;
     height: 24px;
-    background-image: url("../public/svg/icon-gnb-cart.svg");
+  background-image: url("../public/svg/icon-gnb-cart.svg");
+
     background-size: 24px 48px;
     background-position: 0 0;
   }
@@ -1930,16 +1929,6 @@ button:focus-visible {
     min-width: 0;
     font-size: 13px;
     font-weight: 500;
-  }
-
-  .btn-cart-icon::before {
-    width: 22px;
-    height: 22px;
-    background-size: 22px 44px;
-  }
-
-  .btn-cart-icon:hover::before {
-    background-position: 0 -22px;
   }
 
   /* Brand section title visible */
