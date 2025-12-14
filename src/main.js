@@ -69,7 +69,7 @@ const renderBrandCarousel = eventData => {
 
       <div class="brand-carousel">
         <button class="brand-carousel__control brand-carousel__control--prev btn-prev" type="button" aria-label="이전 브랜드 보기" aria-disabled="true">
-          <img src="public/svg/icon-arrow.svg" alt="" aria-hidden="true" />
+          <img src="/svg/icon-arrow.svg" alt="" aria-hidden="true" />
         </button>
 
         <div class="brand-viewport">
@@ -79,7 +79,7 @@ const renderBrandCarousel = eventData => {
         </div>
 
         <button class="brand-carousel__control brand-carousel__control--next btn-next" type="button" aria-label="다음 브랜드 보기" aria-disabled="false">
-          <img src="public/svg/icon-arrow.svg" alt="" aria-hidden="true" />
+          <img src="/svg/icon-arrow.svg" alt="" aria-hidden="true" />
         </button>
 
         <div class="scroll-tracker" aria-hidden="true">
