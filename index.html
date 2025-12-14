@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="현대면세점 이벤트 페이지 - 퍼블리셔 과제_김민지">
+    <meta name="description" content="현대면세점 이벤트 페이지 - 퍼블리셔 과제_김민지" />
     <title>현대면세점 퍼블리셔 과제_김민지</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -61,10 +61,7 @@
                 aria-expanded="false"
                 aria-controls="menu-layer"
               >
-                <img
-                  src="public/images/icons/icon-btn-drawer.png"
-                  alt=""
-                />
+                <img src="public/images/icons/icon-btn-drawer.png" alt="" />
               </button>
 
               <h1 class="hd-header__logo">
@@ -121,7 +118,8 @@
                   <li><a href="#">식품</a></li>
                 </ul>
                 <p class="menu-layer__note">
-                  시안에 메뉴 상세가 제공되지 않아, 레이어 구조/인터랙션(열기·닫기/ESC/바깥 클릭)만 샘플로 구현했습니다.
+                  시안에 메뉴 상세가 제공되지 않아, 레이어 구조/인터랙션(열기·닫기/ESC/바깥 클릭)만
+                  샘플로 구현했습니다.
                 </p>
               </div>
 
@@ -181,7 +179,12 @@
                   <li><a href="#" id="breadcrumb-current">라네즈 외 7개 브랜드 할인 기획전</a></li>
                 </ol>
                 <div class="breadcrumb-dropdown-wrapper">
-                  <button class="breadcrumb-toggle" type="button" aria-label="경로 확장/축소" aria-expanded="false">
+                  <button
+                    class="breadcrumb-toggle"
+                    type="button"
+                    aria-label="경로 확장/축소"
+                    aria-expanded="false"
+                  >
                     <img
                       src="public/images/icons/icon-btn-up.png"
                       alt=""
@@ -198,9 +201,21 @@
               </nav>
 
               <div class="hero-social" aria-label="공유">
-                <button type="button" class="social-btn social-btn--heart" aria-label="좋아요"></button>
-                <button type="button" class="social-btn social-btn--facebook" aria-label="페이스북에 공유"></button>
-                <button type="button" class="social-btn social-btn--blog" aria-label="블로그에 공유"></button>
+                <button
+                  type="button"
+                  class="social-btn social-btn--heart"
+                  aria-label="좋아요"
+                ></button>
+                <button
+                  type="button"
+                  class="social-btn social-btn--facebook"
+                  aria-label="페이스북에 공유"
+                ></button>
+                <button
+                  type="button"
+                  class="social-btn social-btn--blog"
+                  aria-label="블로그에 공유"
+                ></button>
               </div>
             </div>
           </div>
@@ -262,7 +277,12 @@
         ================================================== -->
 
         <!-- ===== Panel: 행사 ===== -->
-        <section id="panel-event" class="panel panel--active" role="tabpanel" aria-labelledby="tab-event">
+        <section
+          id="panel-event"
+          class="panel panel--active"
+          role="tabpanel"
+          aria-labelledby="tab-event"
+        >
           <div class="container">
             <!-- Rendered by JS -->
           </div>
@@ -284,7 +304,13 @@
               <section class="notice-section" aria-labelledby="notice-title">
                 <div class="notice-section__inner">
                   <h3 id="notice-title" class="notice-section__title">
-                    <img src="public/svg/icon-attention.svg" alt="" aria-hidden="true" width="16" height="16" />
+                    <img
+                      src="public/svg/icon-attention.svg"
+                      alt=""
+                      aria-hidden="true"
+                      width="16"
+                      height="16"
+                    />
                     유의사항
                   </h3>
 
@@ -292,10 +318,14 @@
                     <li>본 ID 당 1일 1회 증정됩니다.</li>
                     <li>사은품은 중복 증정이 되지 않습니다.</li>
                     <li>사은품은 디자인 및 구성이 임의로 증정되며, 선택할 수 없습니다.</li>
-                    <li class="text-red">사은품의 재고 소진 이후에도 해당 페이지와 관련 배너는 보여질 수 있습니다.</li>
+                    <li class="text-red">
+                      사은품의 재고 소진 이후에도 해당 페이지와 관련 배너는 보여질 수 있습니다.
+                    </li>
                   </ul>
 
-                  <button class="btn-more-event" type="button">더 많은 기획전 행사가 궁금하다면</button>
+                  <button class="btn-more-event" type="button">
+                    더 많은 기획전 행사가 궁금하다면
+                  </button>
                 </div>
               </section>
             </div>
@@ -303,27 +333,45 @@
         </section>
 
         <!-- ===== Panel: 추천상품 (시안 미제공) ===== -->
-        <section id="panel-recommend" class="panel panel--sample" role="tabpanel" aria-labelledby="tab-recommend" hidden>
+        <section
+          id="panel-recommend"
+          class="panel panel--sample"
+          role="tabpanel"
+          aria-labelledby="tab-recommend"
+          hidden
+        >
           <div class="container">
             <div class="panel-empty" role="status" aria-live="polite">
               <h3 class="panel-empty__title">추천상품</h3>
               <p class="panel-empty__desc">
-                시안에 추천상품 데이터가 제공되지 않아, 탭 UI 및 전환 인터랙션(접근성 포함)만 구현했습니다.
+                시안에 추천상품 데이터가 제공되지 않아, 탭 UI 및 전환 인터랙션(접근성 포함)만
+                구현했습니다.
               </p>
-              <button type="button" class="panel-empty__cta" data-go="panel-event">행사로 돌아가기</button>
+              <button type="button" class="panel-empty__cta" data-go="panel-event">
+                행사로 돌아가기
+              </button>
             </div>
           </div>
         </section>
 
         <!-- ===== Panel: 전체상품 (시안 미제공) ===== -->
-        <section id="panel-all" class="panel panel--sample" role="tabpanel" aria-labelledby="tab-all" hidden>
+        <section
+          id="panel-all"
+          class="panel panel--sample"
+          role="tabpanel"
+          aria-labelledby="tab-all"
+          hidden
+        >
           <div class="container">
             <div class="panel-empty" role="status" aria-live="polite">
               <h3 class="panel-empty__title">전체상품</h3>
               <p class="panel-empty__desc">
-                시안에 전체상품 데이터가 제공되지 않아, 탭 UI 및 전환 인터랙션(접근성 포함)만 구현했습니다.
+                시안에 전체상품 데이터가 제공되지 않아, 탭 UI 및 전환 인터랙션(접근성 포함)만
+                구현했습니다.
               </p>
-              <button type="button" class="panel-empty__cta" data-go="panel-event">행사로 돌아가기</button>
+              <button type="button" class="panel-empty__cta" data-go="panel-event">
+                행사로 돌아가기
+              </button>
             </div>
           </div>
         </section>
