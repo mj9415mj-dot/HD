@@ -15,12 +15,22 @@ const renderHero = (heroData) => {
   const heroSection = document.querySelector('.hero');
   if (!heroSection) return;
 
+  const mobileTitle = document.querySelector('.mobile-header__title');
+  if (mobileTitle && heroData.mobileTitle) {
+    mobileTitle.textContent = heroData.mobileTitle;
+  }
+
+  const subtitleHtml = heroData.subtitleMobile
+    ? `<p class="hero__subtitle is-desktop-only">${heroData.subtitle}</p>
+       <p class="hero__subtitle is-mobile-only">${heroData.subtitleMobile}</p>`
+    : `<p class="hero__subtitle">${heroData.subtitle}</p>`;
+
   heroSection.innerHTML = `
     <div class="container hero-container_box">
       <div class="hero__text">
         <p class="hero__date">${heroData.date}</p>
         <h2 class="hero__title">${heroData.title}</h2>
-        <p class="hero__subtitle">${heroData.subtitle}</p>
+        ${subtitleHtml}
       </div>
       <div class="hero__image">
         <img src="${heroData.image}" alt="${heroData.alt}" />

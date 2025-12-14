@@ -5,7 +5,8 @@ const VARIANTS = {
       title: "라네즈 외 7개 브랜드<br />햇살 가림 상품 기획전",
       subtitle: "전 구매 고객 대상 7개 브랜드 상품 할인!",
       image: "public/images/variants/a/hero/hero-main.png",
-      alt: "라네즈 외 7개 브랜드 햇살 가림 상품 기획전"
+      alt: "라네즈 외 7개 브랜드 햇살 가림 상품 기획전",
+      mobileTitle: "기획전"
     },
     events: [
       {
@@ -79,8 +80,10 @@ const VARIANTS = {
       date: "2024.07.29 · 재고소진시까지",
       title: "풀리오 최강 마사지 조합",
       subtitle: "세트로 구매하면 더 싸다!<br>같이 구매하면 36% 할인",
+      subtitleMobile: "세트로 구매하면 더 싸다! 세트로 구매하면 더 싸다!<br>같이 구매하면 36% 할인",
       image: "public/images/variants/b/hero/hero-main.png",
-      alt: "풀리오 최강 마사지 조합"
+      alt: "풀리오 최강 마사지 조합",
+      mobileTitle: "세일"
     },
     events: [
       {
